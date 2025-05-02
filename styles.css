@@ -1,0 +1,7 @@
+.header
+{
+    background-color: #00000084;
+    padding: 20px;
+    height: 100px;
+    backdrop-filter: blur(3px);
+}

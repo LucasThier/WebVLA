@@ -1,1 +1,46 @@
-hello world
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Complejo en Villa La Angostura</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-white text-gray-800">
+
+    <header class="bg-green-900 text-white p-6">
+        <h1 class="text-3xl font-bold">Complejo [Nombre del Proyecto]</h1>
+        <p class="text-lg">Vivi en la naturaleza de Villa La Angostura</p>
+    </header>
+
+    <section class="p-6">
+        <h2 class="text-2xl font-semibold mb-4">Sobre el proyecto</h2>
+        <p>Un exclusivo complejo de departamentos con vistas al lago, rodeado de bosque nativo.</p>
+    </section>
+
+    <section class="grid grid-cols-1 md:grid-cols-3 gap-4 p-6">
+        <!-- Reemplazá los src con tus imágenes -->
+        <img src="imagen1.jpg" alt="Render 1" class="rounded shadow" />
+        <img src="imagen2.jpg" alt="Render 2" class="rounded shadow" />
+        <img src="imagen3.jpg" alt="Render 3" class="rounded shadow" />
+    </section>
+
+    <section class="bg-gray-100 p-6">
+        <h2 class="text-xl font-bold mb-2">Contactanos</h2>
+        <form action="https://formspree.io/f/{tu-form-id}" method="POST" class="flex flex-col gap-4">
+            <input type="text" name="nombre" placeholder="Nombre" class="p-2 border rounded" required />
+            <input type="email" name="email" placeholder="Email" class="p-2 border rounded" required />
+            <textarea name="mensaje" rows="4" placeholder="Mensaje" class="p-2 border rounded"></textarea>
+            <button type="submit" class="bg-green-900 text-white p-2 rounded">Enviar</button>
+        </form>
+    </section>
+
+    <footer class="text-center text-sm p-4 text-gray-500">
+        © 2025 Complejo [Nombre del Proyecto] - Villa La Angostura
+    </footer>
+
+</body>
+
+</html>

@@ -37,9 +37,9 @@
     </section>
 
     <section id="proyecto" class="p-6 ">
-        <div class="flex">
+        <div class="flex gap-4">
             <img src="img/render Ej2.jpg" alt="Render" class="imagen-proyecto w-1/2 rounded" />
-            <div class="flex flex-col justify-center px-5">
+            <div class="flex flex-col justify-center">
                 <h2 class="text-2xl font-bold mb-2">El Proyecto</h2>
                 <p class="text-lg">Un complejo exclusivo de departamentos con vista al lago, ubicado en el corazón de
                     Villa
@@ -47,8 +47,8 @@
                 <p class="mt-4">Ideal para disfrutar de la naturaleza y realizar actividades al aire libre.</p>
             </div>
         </div>
-        <div class="flex">
-            <div class="flex flex-col justify-center px-5">
+        <div class="flex gap-4">
+            <div class="flex flex-col justify-center">
                 <h2 class="text-2xl font-bold mb-2">Caracteristicas</h2>
                 <ul class="list-none pl-0">
                     <li class="flex items-center">
@@ -82,21 +82,23 @@
 
     </section>
 
-    <section class="grid grid-cols-1 md:grid-cols-3 gap-4 p-6">
-        <!-- Reemplazá los src con tus imágenes -->
-        <img src="img/render Ej1.jpg" alt="Render 1" class="rounded shadow" />
-        <img src="img/render Ej2.jpg" alt="Render 2" class="rounded shadow" />
-        <img src="img/render Ej3.webp" alt="Render 3" class="rounded shadow" />
-    </section>
-
-    <section class="bg-gray-100 p-6">
-        <h2 class="text-xl font-bold mb-2">Contactanos</h2>
-        <form action="https://formspree.io/f/{tu-form-id}" method="POST" class="flex flex-col gap-4">
-            <input type="text" name="nombre" placeholder="Nombre" class="p-2 border rounded" required />
-            <input type="email" name="email" placeholder="Email" class="p-2 border rounded" required />
-            <textarea name="mensaje" rows="4" placeholder="Mensaje" class="p-2 border rounded"></textarea>
-            <button type="submit" class="bg-green-900 text-white p-2 rounded">Enviar</button>
-        </form>
+    <section id="ubicacion-contacto" class="bg-gray-100 p-6 flex gap-6">
+        <div class="w-1/2">
+            <iframe class="h-96 rounded w-full"
+                src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3022.1935750060584!2d-71.65016!3d-40.757767!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNDDCsDQ1JzI4LjAiUyA3McKwMzknMDAuNiJX!5e0!3m2!1ses!2sar!4v1746169176685!5m2!1ses!2sar"
+                allowfullscreen="" loading="lazy"></iframe>
+        </div>
+        <div class="w-1/2 max-h-96 flex flex-col justify-between">
+            <h2 class="text-xl font-bold mb-2">Contactanos</h2>
+            <form action="https://formspree.io/f/{tu-form-id}" method="POST"
+                class="flex flex-col gap-4 flex-grow overflow-hidden">
+                <input type="text" name="nombre" placeholder="Nombre" class="p-2 border rounded" required />
+                <input type="email" name="email" placeholder="Email" class="p-2 border rounded" required />
+                <textarea name="mensaje" placeholder="Mensaje"
+                    class="p-2 border rounded resize-y min-h-[3rem] overflow-auto"></textarea>
+                <button type="submit" class="bg-green-900 text-white p-2 rounded">Enviar</button>
+            </form>
+        </div>
     </section>
 
     <footer class="text-center text-sm p-4 text-gray-500">

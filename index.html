@@ -18,7 +18,7 @@
 
 <body class="bg-white text-gray-800">
 
-    <header class="header fixed top-0 w-full text-white shadow-md">
+    <header class="header fixed top-0 w-full text-white shadow-md z-50">
         <div class="px-4 h-full flex items-center justify-between">
             <h1 class="text-xl font-bold">Complejo VLA</h1>
             <nav class="space-x-4 hidden md:flex">
@@ -29,8 +29,10 @@
         </div>
     </header>
 
-    <section id="hero" class="bg-cover bg-center h-screen" style="background-image: url('img/render\ Ej3.webp');">
-        <div class="flex flex-col items-center justify-center h-full text-center text-white px-4">
+    <section id="hero" class="bg-cover bg-center h-screen"
+        style="background-image: url('img/Media_VLA/Render_Exterior6.jpg');">
+        <div class="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-b from-transparent to-[#CFCFCF] z-10"></div>
+        <div id="hero-text" class="flex flex-col items-center justify-center h-full text-center px-4">
             <h1 class="text-4xl md:text-6xl font-bold">Vivi en Villa La Angostura</h1>
             <p class="mt-4 text-lg md:text-xl">Departamentos con vista al lago, en un entorno natural único.</p>
         </div>
@@ -82,7 +84,31 @@
 
     </section>
 
-    <section id="ubicacion-contacto" class="bg-gray-100 p-6 flex gap-6">
+    <section class="bg-gray-200 p-6">
+        <div class="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-b from-transparent to-[#CFCFCF] z-10"></div>
+        <div class="flex items-center justify-between p-6">
+            <iframe width="840" height="472.5" src="https://www.youtube.com/embed/xzCF9KlZ4Zw?rel=0"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+            </iframe>
+            <div> </div>
+        </div>
+        <div class="flex items-center justify-between p-6">
+            <div> </div>
+
+            <iframe width="840" height="472.5" src="https://www.youtube.com/embed/jQ69rAj5Zi0"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+            </iframe>
+        </div>
+
+    </section>
+
+    <section id="contacto" class="bg-gray-100 p-6 flex gap-6">
+
+
         <div class="w-1/2">
             <iframe class="h-96 rounded w-full"
                 src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3022.1935750060584!2d-71.65016!3d-40.757767!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNDDCsDQ1JzI4LjAiUyA3McKwMzknMDAuNiJX!5e0!3m2!1ses!2sar!4v1746169176685!5m2!1ses!2sar"
@@ -90,7 +116,7 @@
         </div>
         <div class="w-1/2 max-h-96 flex flex-col justify-between">
             <h2 class="text-xl font-bold mb-2">Contactanos</h2>
-            <form action="https://formspree.io/f/{tu-form-id}" method="POST"
+            <form action="https://formspree.io/f/mwpolvkj" method="POST"
                 class="flex flex-col gap-4 flex-grow overflow-hidden">
                 <input type="text" name="nombre" placeholder="Nombre" class="p-2 border rounded" required />
                 <input type="email" name="email" placeholder="Email" class="p-2 border rounded" required />

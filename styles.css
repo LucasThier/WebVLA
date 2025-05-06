@@ -4,7 +4,11 @@
     padding: 20px;
     height: 100px;
     backdrop-filter: blur(3px);
+}
 
+#menu
+{
+    backdrop-filter: blur(3px);
 }
 
 #proyecto

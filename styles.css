@@ -11,6 +11,14 @@
     backdrop-filter: blur(3px);
 }
 
+@media (min-width: 768px)
+{
+    .header
+    {
+        backdrop-filter: none;
+    }
+}
+
 #proyecto
 {
     background-color: #00000030;

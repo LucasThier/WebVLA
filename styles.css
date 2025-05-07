@@ -21,3 +21,26 @@
     color: white;
     text-shadow: 2px 2px 4px #000000;
 }
+
+.swiper-button-next,
+.swiper-button-prev
+{
+    color: #aaa !important;
+    opacity: 0.6;
+    transition: opacity 0.2s ease;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover
+{
+    color: #000000 !important;
+    opacity: 1;
+    /* más visibles al pasar el mouse */
+}
+
+.swiper-pagination-bullet-active
+{
+    background-color: #000000 !important;
+    opacity: 1 !important;
+
+}

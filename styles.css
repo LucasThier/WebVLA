@@ -1,22 +1,14 @@
+:root
+{
+    color-scheme: only light;
+}
+
 .header
 {
     background-color: #00000084;
     padding: 20px;
     height: 100px;
     backdrop-filter: blur(3px);
-}
-
-#menu
-{
-    backdrop-filter: blur(3px);
-}
-
-@media (min-width: 768px)
-{
-    .header
-    {
-        backdrop-filter: none;
-    }
 }
 
 #proyecto

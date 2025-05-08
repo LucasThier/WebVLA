@@ -19,7 +19,7 @@
 #hero-text
 {
     color: white;
-    text-shadow: 2px 2px 4px #000000;
+    text-shadow: 3px 3px 6px #000000;
 }
 
 .swiper-button-next,
@@ -43,4 +43,68 @@
     background-color: #000000 !important;
     opacity: 1 !important;
 
+}
+
+.no-select
+{
+    user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.swiper-slide img
+{
+    pointer-events: none;
+    /* opcional: evita arrastrar la imagen */
+}
+
+.fondo-zoom
+{
+    background-image: url('tu-imagen.jpg');
+    background-size: 100%;
+    /* imagen al tamaño original sin zoom */
+    background-position: center;
+    /* comienza centrada */
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    /* para que el fondo permanezca fijo mientras se hace scroll (opcional) */
+    width: 100%;
+    height: 100vh;
+
+    animation: zoomInOut 45s ease-in-out infinite;
+}
+
+@keyframes zoomInOut
+{
+    0%
+    {
+        background-size: 100%;
+        /* sin zoom */
+        background-position: center;
+        /* imagen centrada */
+    }
+
+    25%
+    {
+        background-size: 120%;
+        background-position: left;
+        /* hacia la parte inferior derecha */
+    }
+
+    75%
+    {
+        background-size: 120%;
+        background-position: right;
+        /* hacia la parte superior derecha */
+    }
+
+    100%
+    {
+        background-size: 100%;
+        /* vuelve al tamaño original */
+        background-position: center;
+        /* vuelve a estar centrada */
+    }
 }

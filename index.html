@@ -9,8 +9,7 @@
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Complejo en Villa La Angostura</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
@@ -138,7 +137,7 @@
         </div>
 
         <div class="flex items-center justify-between flex-wrap gap-6 mb-12">
-            <div class="w-full md:w-3/5 h-[15rem] md:h-[30rem] mx-auto" data-aos="flip-left" data-aos-duration="1000">
+            <div class="w-full md:w-3/5 h-[15rem] md:h-[30rem] mx-auto" data-aos="fade" data-aos-duration="1000">
                 <iframe loading="lazy" width="100%" height="100%" src="https://www.youtube.com/embed/xzCF9KlZ4Zw?rel=0"
                     title="Render del Exterior" frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -162,7 +161,7 @@
                     y vistas increíbles.
                 </p>
             </div>
-            <div class="w-full md:w-3/5 h-[15rem] md:h-[30rem] mx-auto order-1 md:order-2" data-aos="flip-right"
+            <div class="w-full md:w-3/5 h-[15rem] md:h-[30rem] mx-auto order-1 md:order-2" data-aos="fade"
                 data-aos-duration="1000">
                 <iframe loading="lazy" width="100%" height="100%" src="https://www.youtube.com/embed/jQ69rAj5Zi0?rel=0"
                     title="Render del Interior" frameborder="0"
@@ -313,7 +312,8 @@
 
     <section id="lugar" class="relative scroll-mt-28 text-gray-800 p-8 md:p-16">
         <!-- Video de fondo -->
-        <video class="absolute top-0 left-0 w-full h-full object-cover z-0" autoplay muted loop playsinline>
+        <video class="absolute top-0 left-0 w-full h-full object-cover z-0" loading="lazy" autoplay muted loop
+            playsinline>
             <source src="img/Media_VLA/videos/VLA varios 1.mp4" type="video/mp4">
             Tu navegador no soporta videos HTML5.
         </video>

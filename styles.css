@@ -1,7 +1,11 @@
+@import "tailwindcss";
+
+
 :root
 {
     color-scheme: only light;
 }
+
 
 .header
 {
@@ -9,6 +13,7 @@
     height: 100px;
     backdrop-filter: blur(3px);
 }
+
 
 #proyecto
 {

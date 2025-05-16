@@ -6,7 +6,6 @@
 .header
 {
     background-color: #00000084;
-    padding: 20px;
     height: 100px;
     backdrop-filter: blur(3px);
 }
@@ -106,5 +105,28 @@
         /* vuelve al tamaño original */
         background-position: center;
         /* vuelve a estar centrada */
+    }
+}
+
+.desaparecer
+{
+    animation: fadeOut 20s forwards;
+}
+
+@keyframes fadeOut
+{
+    0%
+    {
+        opacity: 1;
+    }
+
+    90%
+    {
+        opacity: 1;
+    }
+
+    100%
+    {
+        opacity: 0;
     }
 }

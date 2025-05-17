@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
 </head>
 
@@ -365,6 +366,63 @@
                     armonía y
                     el bienestar. No es solo un lugar donde vivir, sino un lugar para vivir mejor.
                 </p>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="actividades" class="bg-white py-16" x-data="{
+          estacion: 'verano',
+          init() {
+            this.$watch('estacion', () => {
+              document.querySelectorAll('#actividades video').forEach(v => {
+                v.pause();
+                console.log('Video pausado');
+              });
+            });
+          }
+        }">
+        <h2 class="text-3xl font-bold mb-8 text-center">Actividades</h2>
+
+        <div class="bg-gray-100 rounded shadow-md overflow-hidden mx-6">
+
+            <!-- Pestañas -->
+            <div class="flex flex-wrap border-b border-gray-300">
+                <template x-for="epoca in ['verano', 'otoño', 'invierno', 'primavera']" :key="epoca">
+                    <div @click="estacion = epoca" x-text="epoca.charAt(0).toUpperCase() + epoca.slice(1)"
+                        class="flex-1 text-center py-4 cursor-pointer font-semibold transition-all select-none" :class="{
+                  'bg-gray-800 text-white': estacion === epoca,
+                  'bg-gray-200 text-gray-700 hover:bg-gray-300': estacion !== epoca
+                }"></div>
+                </template>
+            </div>
+
+            <!-- Contenido dinámico -->
+            <div class="p-6">
+                <div x-show="estacion === 'verano'" x-transition>
+                    <p class="mb-4">Disfrutá de playas del lago Nahuel Huapi, senderismo, kayak y mountain bike.</p>
+                    <img src="img/Media_VLA/Render_Exterior1.JPG" alt="Verano"
+                        class="rounded shadow-md w-full max-h-[400px] object-cover">
+                </div>
+
+                <div x-show="estacion === 'otoño'" x-transition>
+                    <p class="mb-4">Explorá los colores del bosque patagónico, caminatas y fotografía de naturaleza.</p>
+                    <img src="img/Media_VLA/Render_Exterior1.JPG" alt="Otoño"
+                        class="rounded shadow-md w-full max-h-[400px] object-cover">
+                </div>
+
+                <div x-show="estacion === 'invierno'" x-transition class="flex">
+                    <p class="mb-4">Esquí y snowboard en Cerro Bayo, paisajes nevados, chimeneas acogedoras.</p>
+                    <video controls class="rounded shadow-md w-full max-h-[400px] object-cover">
+                        <source src="img/Media_VLA/videos/Cerro Bayo 2024.mp4" type="video/mp4">
+                    </video>
+                </div>
+
+                <div x-show="estacion === 'primavera'" x-transition>
+                    <p class="mb-4">Florecen los senderos, clima ideal para trekking y observación de aves.</p>
+                    <img src="img/Media_VLA/Render_Exterior1.JPG" alt="Primavera"
+                        class="rounded shadow-md w-full max-h-[400px] object-cover">
+                </div>
             </div>
         </div>
     </section>

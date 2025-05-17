@@ -60,7 +60,8 @@
 
 .swiper-slide img
 {
-    pointer-events: none;
+    user-select: none;
+    -webkit-user-drag: none;
     /* opcional: evita arrastrar la imagen */
 }
 
@@ -121,4 +122,10 @@
     {
         opacity: 0;
     }
+}
+
+.bg-overlay
+{
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(3px);
 }

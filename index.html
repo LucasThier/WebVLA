@@ -235,7 +235,7 @@
                         <!-- Planta Baja -->
                         <div class="swiper-slide text-center">
                             <h3 class="text-xl font-semibold mb-2">Planta Baja</h3>
-                            <img src="img/Media_VLA/planos/Planta0.jpg" class="rounded mx-auto" />
+                            <img src="img/Media_VLA/planos/SmallPlanta0.jpg" class="rounded mx-auto" />
                         </div>
 
                         <!-- Primer Piso -->
@@ -309,16 +309,20 @@
         });
     </script>
 
+
+
+
+
     <section id="lugar" class="relative scroll-mt-28 text-gray-800 p-8 md:p-16">
         <!-- Video de fondo -->
-        <video class="absolute top-0 left-0 w-full h-full object-cover z-0" loading="lazy" autoplay muted loop
-            playsinline>
+        <video class="absolute top-0 left-0 w-full h-full object-cover z-0" autoplay muted loop playsinline
+            preload="none">
             <source src="img/Media_VLA/videos/VLA varios 1.mp4" type="video/mp4">
             Tu navegador no soporta videos HTML5.
         </video>
 
         <!-- Capa oscura encima del video -->
-        <div class="absolute inset-0 bg-black bg-opacity-20 z-10"></div>
+        <div class="absolute inset-0 bg-[#00000020] z-10"></div>
 
         <div class="relative z-20 max-w-5xl mx-auto text-center text-white" data-aos="zoom-in" data-aos-delay="1000"
             data-aos-duration="3000" data-aos-easing="ease-in-out">
@@ -367,14 +371,14 @@
 
 
     <section id="contacto" class="bg-gray-100 p-6 flex flex-wrap gap-6 items-start justify-between">
-        <div class="w-full md:w-3/5 mx-auto">
+        <div class="w-full md:w-1/3 mx-auto">
             <iframe class="w-full h-96 rounded"
                 src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3022.1935750060584!2d-71.65016!3d-40.757767!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNDDCsDQ1JzI4LjAiUyA3McKwMzknMDAuNiJX!5e0!3m2!1ses!2sar!4v1746169176685!5m2!1ses!2sar"
                 allowfullscreen="" loading="lazy">
             </iframe>
         </div>
 
-        <div class="w-full md:w-1/3 mx-auto max-h-[24rem] flex flex-col justify-between">
+        <div class="w-full md:w-1/2 mx-auto max-h-[24rem] flex flex-col justify-between">
             <h2 class="text-xl font-bold mb-4 text-center md:text-left">Contactanos</h2>
             <form action="https://formspree.io/f/mwpolvkj" method="POST" class="flex flex-col gap-4">
                 <input type="text" name="nombre" placeholder="Nombre" class="p-2 border rounded" required />
@@ -388,10 +392,36 @@
         </div>
     </section>
 
-
     <footer class="text-center text-sm p-4 text-gray-500">
         © 2025 Complejo [Nombre del Proyecto] - Villa La Angostura
     </footer>
+
+    <!-- overlay de imagenes -->
+    <div id="image-overlay" class="fixed inset-0 z-50 flex items-center justify-center hidden bg-overlay">
+        <div class="relative w-[90vw] h-[90vh] overflow-hidden">
+            <button id="close-overlay" class="absolute top-2 right-2 z-10 bg-[#78bddb] rounded">
+                <img src="img/Media_VLA/icons/closeBtn.png" alt="Cerrar" class="w-13 h-13" />
+            </button>
+
+            <div class="absolute top-1/2 right-2 z-10 flex-col gap-6 bg-[#78bddb] shadow rounded p-2">
+                <div id="zoom-in" class="z-10 cursor-pointer">
+                    <img src="img/Media_VLA/icons/zoomInBtn.png" alt="Zoom In" class="w-12 h-12" />
+                </div>
+
+                <div id="zoom-out" class="z-10 cursor-pointer">
+                    <img src="img/Media_VLA/icons/zoomOutBtn.png" alt="Zoom Out" class="w-12 h-12" />
+                </div>
+            </div>
+
+
+            <div id="image-container" class="w-full h-full overflow-hidden cursor-grab">
+                <img id="overlay-image"
+                    class="select-none pointer-events-auto object-contain absolute top-0 left-0 right-0 bottom-0 m-auto"
+                    draggable="false" />
+            </div>
+        </div>
+    </div>
+
 
 
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
@@ -400,6 +430,125 @@
             once: false
         });
     </script>
+
+    <script>
+        const overlay = document.getElementById('image-overlay')
+        const overlayImg = document.getElementById('overlay-image')
+        const imageContainer = document.getElementById('image-container')
+        const closeBtn = document.getElementById('close-overlay')
+        const zoomInBtn = document.getElementById('zoom-in')
+        const zoomOutBtn = document.getElementById('zoom-out')
+
+        let scale = 0.4
+        let posX = 0
+        let posY = 0
+        let isDragging = false
+        let startX, startY
+
+        const updateTransform = () => {
+            const containerWidth = imageContainer.offsetWidth
+            const containerHeight = imageContainer.offsetHeight
+            const imgWidth = overlayImg.naturalWidth
+            const imgHeight = overlayImg.naturalHeight
+
+            const scaledWidth = (imgWidth * scale) / overlayImg.naturalWidth * overlayImg.offsetWidth
+            const scaledHeight = (imgHeight * scale) / overlayImg.naturalHeight * overlayImg.offsetHeight
+
+            const maxX = Math.max((scaledWidth - containerWidth) / (2 * scale), 0)
+            const maxY = Math.max((scaledHeight - containerHeight) / (2 * scale), 0)
+
+            posX = Math.min(Math.max(posX, -maxX), maxX)
+            posY = Math.min(Math.max(posY, -maxY), maxY)
+
+            overlayImg.style.transform = `scale(${scale}) translate(${posX}px, ${posY}px)`
+        }
+
+        zoomInBtn.addEventListener('click', () => {
+            scale = Math.min(scale + 0.5, 5)
+            updateTransform()
+        })
+
+        zoomOutBtn.addEventListener('click', () => {
+            scale = Math.max(scale - 0.5, 0.4)
+            posX = 0
+            posY = 0
+            updateTransform()
+        })
+
+        const enableZoomOverlay = (selector) => {
+            document.querySelectorAll(selector).forEach(img => {
+                img.style.cursor = 'pointer'
+                img.addEventListener('click', () => {
+                    document.body.classList.add('overflow-hidden')
+                    overlayImg.src = img.src.replace('Small', '')
+                    overlay.classList.remove('hidden')
+                    scale = 0.4
+                    posX = 0
+                    posY = 0
+                    updateTransform()
+                })
+            })
+        }
+
+        enableZoomOverlay('#planos .swiper-slide img')
+        enableZoomOverlay('#proyecto img')
+
+        imageContainer.addEventListener('wheel', (e) => {
+            e.preventDefault()
+            const delta = Math.sign(e.deltaY)
+            if (delta < 0) {
+                scale = Math.min(scale + 0.2, 5)
+            } else {
+                scale = Math.max(scale - 0.2, 0.1)
+                if (scale === 1) {
+                    posX = 0
+                    posY = 0
+                }
+            }
+            updateTransform()
+        }, { passive: false })
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                document.body.classList.remove('overflow-hidden')
+                overlay.classList.add('hidden')
+                overlayImg.src = ''
+            }
+        })
+
+        closeBtn.addEventListener('click', () => {
+            document.body.classList.remove('overflow-hidden')
+            overlay.classList.add('hidden')
+            overlayImg.src = ''
+        })
+
+        imageContainer.addEventListener('mousedown', (e) => {
+            //if (scale <= 1) return
+            isDragging = true
+            startX = e.clientX
+            startY = e.clientY
+            imageContainer.classList.remove('cursor-grab')
+            imageContainer.classList.add('cursor-grabbing')
+        })
+
+        window.addEventListener('mouseup', () => {
+            isDragging = false
+            imageContainer.classList.remove('cursor-grabbing')
+            imageContainer.classList.add('cursor-grab')
+        })
+
+        window.addEventListener('mousemove', (e) => {
+            if (!isDragging) return
+            const dx = e.clientX - startX
+            const dy = e.clientY - startY
+            startX = e.clientX
+            startY = e.clientY
+            posX += dx / scale
+            posY += dy / scale
+            updateTransform()
+        })
+    </script>
+
 </body>
 
 </html>

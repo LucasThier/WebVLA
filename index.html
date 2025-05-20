@@ -35,10 +35,14 @@
 
             <nav id="menu" data-aos="slide-left" data-aos-duration="1000"
                 class="hidden md:flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-4 absolute md:static top-full right-0 md:right-auto bg-[#00000084] md:bg-[#00000000] px-4 py-2 md:p-0 z-60">
-                <a href="#proyecto" class="block hover:text-green-400">El Proyecto</a>
-                <a href="#lugar" class="block hover:text-green-400">Lugar</a>
-                <a href="#galeria" class="block hover:text-green-400">Galería</a>
-                <a href="#contacto" class="block hover:text-green-400">Contacto</a>
+                <a href="#proyecto" class="block hover:text-green-400 hover:underline transition-all duration-200">El
+                    Proyecto</a>
+                <a href="#lugar"
+                    class="block hover:text-green-400 hover:underline transition-all duration-200">Lugar</a>
+                <a href="#galeria"
+                    class="block hover:text-green-400 hover:underline transition-all duration-200">Galería</a>
+                <a href="#contacto"
+                    class="block hover:text-green-400 hover:underline transition-all duration-200">Contacto</a>
             </nav>
         </div>
     </header>
@@ -54,9 +58,27 @@
 
 
     <section id="hero" class="relative h-screen overflow-hidden" data-aos="fade" data-aos-duration="1000">
-        <!-- Imagen animada como fondo -->
-        <img src="img/Media_VLA/Render_Exterior6.webp" alt="Render exterior Aura Andina"
-            class="fondo-zoom absolute top-0 left-0 w-full h-full object-cover z-0" loading="eager" />
+
+        <!-- Carrusel de fondo animado -->
+        <div x-data="{
+        images: [
+          'img/Media_VLA/Render_Exterior6.webp',
+          'img/Media_VLA/Render_Exterior2.jpg',
+          'img/Media_VLA/Render_Exterior5.jpg',
+          'img/Media_VLA/Render_Exterior1.jpg'
+        ],
+        current: 0,
+        startLoop() {
+          setInterval(() => {
+            this.current = (this.current + 1) % this.images.length;
+          }, 8000);
+        }
+      }" x-init="startLoop()" class="absolute top-0 left-0 w-full h-full z-0">
+            <template x-for="(img, index) in images" :key="index">
+                <img :src="img" :class="current === index ? 'opacity-100' : 'opacity-0'"
+                    class="fondo-zoom absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000" />
+            </template>
+        </div>
 
         <!-- Gradiente inferior -->
         <div class="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-b from-transparent to-[#CFCFCF] z-10"></div>
@@ -71,50 +93,43 @@
 
     <section id="proyecto" class="p-6">
 
-        <div class="flex flex-wrap justify-between items-center gap-3">
+        <div class="flex flex-wrap justify-between items-start gap-3">
             <div class="w-full md:w-1/2">
                 <img src="img/Media_VLA/Render_Interior4.jpg" alt="Render" loading="lazy"
                     class="rounded w-full h-auto" />
             </div>
-            <div class="w-full md:w-1/3 mx-auto text-center md:text-left" data-aos="fade-left" data-aos-duration="1000">
-                <h2 class="text-2xl font-bold mb-2">El Proyecto</h2>
-                <p class="text-lg">Un complejo exclusivo de departamentos con vista al lago, ubicado en el corazón de
-                    Villa
-                    La Angostura.</p>
-                <p class="mt-4">Ideal para disfrutar de la naturaleza y realizar actividades al aire libre.</p>
+            <div class="w-full md:w-1/3 mx-auto text-center" data-aos="fade-left" data-aos-duration="1000">
+                <h2 class="text-3xl mb-2">EL PROYECTO</h2>
+                <p class="text-xl leading-10 text-justify">Departamentos de diseño patagónico moderno, donde la
+                    madera
+                    y sus
+                    variantes, la
+                    piedra y la luz natural se combinan con
+                    líneas limpias y todo el confort actual. Cada unidad fue pensada para ofrecer armonía, vistas y
+                    calidez. A construirse
+                    con materiales de excelente calidad, manteniendo su estilo. Los mejores servicios y confort como ser
+                    piso radiante,
+                    carpinterías de PVC tipo DVH, cocinas completas, sistema de agua presurizado, internet de alta
+                    velocidad, etc
+                </p>
             </div>
         </div>
 
         <div class="flex flex-wrap justify-between items-center">
-            <div class="w-full md:w-1/2 md:pl-10 mx-auto text-center md:text-left" data-aos="fade-right"
+            <div class="w-full md:w-1/2 md:pl-6 md:pr-10 mx-auto text-center md:text-center" data-aos="fade-right"
                 data-aos-duration="1000">
-                <h2 class="text-2xl font-bold mb-2">Características</h2>
-                <ul class="list-none pl-0">
-                    <li class="flex items-center">
-                        <i class="fas fa-star fa-fw text-yellow-500 mr-3"></i>
-                        Vista privilegiada al lago
-                    </li>
-                    <li class="flex items-center">
-                        <i class="fas fa-map-marker-alt fa-fw text-red-500 mr-3"></i>
-                        Ubicación estratégica en el corazón de Villa La Angostura
-                    </li>
-                    <li class="flex items-center">
-                        <i class="fas fa-tree fa-fw text-green-500 mr-3"></i>
-                        Acceso a actividades al aire libre, como senderismo y deportes acuáticos
-                    </li>
-                    <li class="flex items-center">
-                        <i class="fas fa-cogs fa-fw text-blue-500 mr-3"></i>
-                        Departamentos modernos con acabados de lujo
-                    </li>
-                    <li class="flex items-center">
-                        <i class="fas fa-users fa-fw text-gray-500 mr-3"></i>
-                        Áreas comunes amplias y bien equipadas
-                    </li>
-                    <li class="flex items-center">
-                        <i class="fas fa-shield-alt fa-fw text-orange-500 mr-3"></i>
-                        Seguridad 24 horas
-                    </li>
-                </ul>
+                <h2 class="text-3xl mb-2">CARACTERÍSTICAS</h2>
+                <p class="text-xl leading-10 text-justify">
+                    El complejo consta de subsuelo de cocheras, PB + 3 pisos con
+                    38 departamentos de 1 o 2 y 3 ambientes con balcones
+                    aterrazados de deck con increíbles vistas a la montaña. Todos con cocheras subterráneas desde donde
+                    se puede acceder a
+                    las unidades. Sum con piscina in-out climatizada integrada, sector para parrillas y laundry.
+                    Emplazados en la mitad del
+                    bosque y la montaña, con una vista excepcional al cordón del Bayo, cerca de todo y lejos de los
+                    mayores movimientos de
+                    VLA en temporada alta.
+                </p>
             </div>
             <div class="w-full md:w-1/2 mx-auto">
                 <img src="img/Media_VLA/Render_Interior5.jpg" alt="Render" class="rounded w-full h-auto" />
@@ -138,11 +153,14 @@
 
         <div class="flex items-center justify-between flex-wrap gap-6 mb-12">
             <div class="w-full md:w-3/5 h-[15rem] md:h-[30rem] mx-auto" data-aos="fade" data-aos-duration="1000">
-                <iframe loading="lazy" width="100%" height="100%" src="https://www.youtube.com/embed/xzCF9KlZ4Zw?rel=0"
+                <video controls class="rounded shadow-md object-cover">
+                    <source src="img/Media_VLA/Video_Exterior.mp4" type="video/mp4">
+                </video>
+                <!-- <iframe loading="lazy" width="100%" height="100%" src="https://www.youtube.com/embed/xzCF9KlZ4Zw?rel=0"
                     title="Render del Exterior" frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowfullscreen class="rounded shadow-lg">
-                </iframe>
+                </iframe> -->
             </div>
             <div class="w-full md:w-1/3 text-center md:text-left flex items-center justify-center">
                 <p class="text-lg">
@@ -163,11 +181,14 @@
             </div>
             <div class="w-full md:w-3/5 h-[15rem] md:h-[30rem] mx-auto order-1 md:order-2" data-aos="fade"
                 data-aos-duration="1000">
-                <iframe loading="lazy" width="100%" height="100%" src="https://www.youtube.com/embed/jQ69rAj5Zi0?rel=0"
+                <video controls class="rounded shadow-md object-cover">
+                    <source src="img/Media_VLA/Video_interor.mp4" type="video/mp4">
+                </video>
+                <!-- <iframe loading="lazy" width="100%" height="100%" src="https://www.youtube.com/embed/jQ69rAj5Zi0?rel=0"
                     title="Render del Interior" frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowfullscreen class="rounded shadow-lg">
-                </iframe>
+                </iframe> -->
             </div>
         </div>
     </section>
@@ -230,7 +251,7 @@
                         <!-- Subsuelo -->
                         <div class="swiper-slide text-center">
                             <h3 class="text-xl font-semibold mb-2">Subsuelo</h3>
-                            <img src="img/Media_VLA/planos/SubSuelo.jpg" class="rounded mx-auto" />
+                            <img src="img/Media_VLA/planos/SmallSubSuelo.jpg" class="rounded mx-auto" />
                         </div>
 
                         <!-- Planta Baja -->
@@ -242,19 +263,19 @@
                         <!-- Primer Piso -->
                         <div class="swiper-slide text-center">
                             <h3 class="text-xl font-semibold mb-2">Primer Piso</h3>
-                            <img src="img/Media_VLA/planos/Planta1.jpg" class="rounded mx-auto" />
+                            <img src="img/Media_VLA/planos/SmallPlanta1.jpg" class="rounded mx-auto" />
                         </div>
 
                         <!-- Segundo Piso -->
                         <div class="swiper-slide text-center">
                             <h3 class="text-xl font-semibold mb-2">Segundo Piso</h3>
-                            <img src="img/Media_VLA/planos/Planta2.jpg" class="rounded mx-auto" />
+                            <img src="img/Media_VLA/planos/SmallPlanta2.jpg" class="rounded mx-auto" />
                         </div>
 
                         <!-- Tercer Piso -->
                         <div class="swiper-slide text-center">
                             <h3 class="text-xl font-semibold mb-2">Tercer Piso</h3>
-                            <img src="img/Media_VLA/planos/Planta3.jpg" class="rounded mx-auto" />
+                            <img src="img/Media_VLA/planos/SmallPlanta3.jpg" class="rounded mx-auto" />
                         </div>
                     </div>
                 </div>
@@ -310,68 +331,112 @@
         });
     </script>
 
+    <section id="lugar" class="relative scroll-mt-28 overflow-hidden text-gray-800 p-8 md:p-16" x-data="{
+            lugarBloques: [
+            {
+                titulo: 'Descubrí Villa La Angostura: Un Paraíso para Vivir e Invertir',
+                html: `
+                <p class='mb-6'>
+                    Ubicada en el corazón de la Patagonia argentina, Villa La Angostura es mucho más que un destino turístico:
+                    es un lugar para conectarse con la naturaleza, disfrutar de la tranquilidad y construir un estilo de vida único.
+                    Esta pintoresca localidad, rodeada por los majestuosos Andes y bañada por las aguas cristalinas del lago Nahuel Huapi entre muchos otros inigualables lagos.
+                </p>
+                <p class='mb-6'>
+                    Comprar una propiedad en Villa La Angostura es invertir en calidad de vida. Ya sea que busques una casa de descanso,
+                    una vivienda permanente o una oportunidad de inversión, este rincón del sur argentino ofrece entornos seguros,
+                    vistas espectaculares y actividades en todas las estaciones del año junto a una comunidad cálida y activa.
+                </p>
+                <p class='mb-6'>
+                    La ciudad cuenta con servicios modernos, excelente conectividad con Bariloche y San Martín de los Andes,
+                    y una creciente oferta gastronómica, educativa y cultural. Su cercanía al Parque Nacional Nahuel Huapi y
+                    al centro de esquí Cerro Bayo permite disfrutar tanto de actividades al aire libre como del relax absoluto.
+                </p>
+                <p class='mb-17.5'>
+                    En un mundo cada vez más acelerado, Villa La Angostura representa una invitación al equilibrio, la armonía y
+                    el bienestar. No es solo un lugar donde vivir, sino un lugar para vivir mejor.
+                </p>
+                `
+            },
+            {
+                titulo: 'Villa La Angostura: Naturaleza, calidad de vida y una inversión inmobiliaria inteligente',
+                html: `
+                <p class='mb-6'>
+                    Ubicada en el corazón de la Patagonia argentina, Villa La Angostura se ha consolidado como uno de los destinos más codiciados tanto para quienes buscan calidad de vida como para quienes desean realizar una inversión inmobiliaria sólida y con proyección. Rodeada por el Parque Nacional Nahuel Huapi, lagos cristalinos y bosques milenarios, esta joya de la cordillera combina belleza natural con infraestructura en constante crecimiento.
+                </p>
+                <p class='mb-6'>
+                    La demanda de propiedades en Villa La Angostura ha crecido notablemente en los últimos años, impulsada por un turismo de alta gama, una creciente comunidad de residentes permanentes y un estilo de vida centrado en el bienestar, la tranquilidad y la conexión con la naturaleza.
+                </p>
+                <p class='mb-6'>
+                    El perfil del comprador es cada vez más exigente: busca entornos seguros, sustentables, con servicios de calidad y conectividad. Villa La Angostura responde a todas esas expectativas, y lo hace manteniendo su carácter exclusivo y su encanto natural.
+                </p>
+                <p>
+                    Invertir en Villa La Angostura hoy es anticiparse a un futuro donde la calidad de vida y el entorno natural se vuelven bienes cada vez más escasos y valorados. Este paraíso patagónico representa una oportunidad inmobiliaria que combina rentabilidad, resguardo de valor y un estilo de vida inigualable.
+                </p>
+                `
+            }
+            ],
+            actual: 0,
+            fade: true,
+            cambiar(direccion) {
+            this.fade = false
+            setTimeout(() => {
+                if (direccion === 'siguiente') {
+                this.actual = (this.actual + 1) % this.lugarBloques.length;
+                } else {
+                this.actual = (this.actual - 1 + this.lugarBloques.length) % this.lugarBloques.length;
+                }
+                this.fade = true;
+            }, 300);
+            }
+        }">
 
-
-
-
-    <section id="lugar" class="relative scroll-mt-28 text-gray-800 p-8 md:p-16">
         <!-- Video de fondo -->
-        <video class="absolute top-0 left-0 w-full h-full object-cover z-0" autoplay muted loop playsinline
-            preload="none">
-            <source src="img/Media_VLA/videos/VLA varios 1.mp4" type="video/mp4">
+        <video class="absolute inset-0 w-full h-full object-cover z-0" autoplay muted loop playsinline preload="none">
+            <source src="img/Media_VLA/videos/VLA varios 1.mp4" type="video/mp4" />
             Tu navegador no soporta videos HTML5.
         </video>
 
-        <!-- Capa oscura encima del video -->
+        <!-- Capa oscura -->
         <div class="absolute inset-0 bg-[#00000020] z-10"></div>
 
-        <div class="relative z-20 max-w-5xl mx-auto text-center text-white" data-aos="zoom-in" data-aos-delay="1000"
-            data-aos-duration="3000" data-aos-easing="ease-in-out">
-            <h2 class="text-3xl md:text-4xl font-semibold mb-8">Descubrí Villa La Angostura: Un Paraíso
-                para
-                Vivir e Invertir</h2>
-            <div class="text-justify">
-                <p class="text-lg leading-relaxed mb-6">
-                    Ubicada en el corazón de la Patagonia argentina, Villa La Angostura es mucho más que un destino
-                    turístico:
-                    es un lugar para conectarse con la naturaleza, disfrutar de la tranquilidad y construir un estilo de
-                    vida
-                    único. Esta pintoresca localidad, rodeada por los majestuosos Andes y bañada por las aguas
-                    cristalinas
-                    del
-                    lago Nahuel Huapi entre muchos otros inigualables lagos.
-                </p>
-                <p class="text-lg leading-relaxed mb-6">
-                    Comprar una propiedad en Villa La Angostura es invertir en calidad de vida. Ya sea que busques una
-                    casa
-                    de
-                    descanso, una vivienda permanente o una oportunidad de inversión, este rincón del sur argentino
-                    ofrece
-                    entornos seguros, vistas espectaculares y actividades en todas las estaciones del año junto a una
-                    comunidad
-                    cálida y activa.
-                </p>
-                <p class="text-lg leading-relaxed mb-6">
-                    La ciudad cuenta con servicios modernos, excelente conectividad con Bariloche y San Martín de los
-                    Andes,
-                    y
-                    una creciente oferta gastronómica, educativa y cultural. Su cercanía al Parque Nacional Nahuel Huapi
-                    y
-                    al
-                    centro de esquí Cerro Bayo permite disfrutar tanto de actividades al aire libre como del relax
-                    absoluto.
-                </p>
-                <p class="text-lg leading-relaxed">
-                    En un mundo cada vez más acelerado, Villa La Angostura representa una invitación al equilibrio, la
-                    armonía y
-                    el bienestar. No es solo un lugar donde vivir, sino un lugar para vivir mejor.
-                </p>
+        <!-- Flechas laterales -->
+        <button @click="cambiar('anterior')" aria-label="Texto anterior"
+            class="absolute md:left-4 left-2 top-1/2 -translate-y-1/2 text-white hover:text-green-400 transition z-20">
+            <svg xmlns="http://www.w3.org/2000/svg" class="md:h-16 sm:h-10 h-8" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M15 19l-7-7 7-7" />
+            </svg>
+        </button>
+
+        <button @click="cambiar('siguiente')" aria-label="Texto siguiente"
+            class="absolute md:right-4 sm:right-2 right-0 top-1/2 -translate-y-1/2 text-white hover:text-green-400 transition z-20">
+            <svg xmlns="http://www.w3.org/2000/svg" class="md:h-16 sm:h-10 h-8" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7" />
+            </svg>
+        </button>
+
+        <!-- Contenido -->
+        <div class="relative z-20 max-w-5xl mx-auto text-center text-white">
+            <!-- Título dinámico -->
+            <h2 x-text="lugarBloques[actual].titulo"
+                class="text-3xl md:text-4xl font-semibold mb-8 transition-opacity duration-500"
+                :class="{ 'opacity-0': !fade }">
+            </h2>
+
+            <!-- Texto dinámico -->
+            <div class="text-justify text-lg leading-relaxed transition-opacity duration-500"
+                x-html="lugarBloques[actual].html" :class="{ 'opacity-0': !fade }">
             </div>
         </div>
+
+        <!-- Gradiente inferior -->
+        <div class="absolute bottom-0 left-0 w-full h-12 bg-gradient-to-b from-transparent to-[#CFCFCF] z-10"></div>
     </section>
 
 
-    <section id="actividades" class="bg-white py-16" x-data="{
+
+    <section id="actividades" class="bg-[#00000030] pt-16" x-data="{
           estacion: 'verano',
           init() {
             this.$watch('estacion', () => {
@@ -383,8 +448,16 @@
           }
         }">
         <h2 class="text-3xl font-bold mb-8 text-center">Actividades</h2>
+        <p class="text-lg text-center mb-8 mx-8">
+            Invertir en Villa La Angostura no solo significa apostar por un entorno natural privilegiado, sino también
+            por un
+            destino que ofrece una fuerte actividad turística durante las cuatro estaciones, lo que garantiza una
+            ocupación
+            sostenida y excelentes oportunidades de rentabilidad inmobiliaria.
+        </p>
 
-        <div class="bg-gray-100 rounded shadow-md overflow-hidden mx-6">
+
+        <div class="bg-gray-100 rounded shadow-md overflow-hidden mx-6 mb-8">
 
             <!-- Pestañas -->
             <div class="flex flex-wrap border-b border-gray-300">
@@ -399,32 +472,156 @@
 
             <!-- Contenido dinámico -->
             <div class="p-6">
-                <div x-show="estacion === 'verano'" x-transition>
-                    <p class="mb-4">Disfrutá de playas del lago Nahuel Huapi, senderismo, kayak y mountain bike.</p>
-                    <img src="img/Media_VLA/Render_Exterior1.JPG" alt="Verano"
-                        class="rounded shadow-md w-full max-h-[400px] object-cover">
+                <div x-show="estacion === 'verano'" x-transition class="flex flex-wrap justify-between">
+                    <div class="lg:w-1/3 mx-auto px-3 lg:max-w-1/3 text-gray-800 lg:text-lg lg:my-auto space-y-4 mb-3">
+                        <p>
+                            El <strong class="font-semibold">verano patagónico</strong> convierte a Villa La Angostura
+                            en un paraíso natural ideal para el ecoturismo y la aventura.
+                        </p>
+
+                        <ul class="list-disc list-inside space-y-2">
+                            <li>
+                                <strong class="font-semibold">Actividades destacadas:</strong>
+                                Senderismo, trekking en los cerros Belvedere e Inacayal, mountain bike, paseos en kayak
+                                por el Lago Nahuel Huapi y el
+                                Correntoso, pesca con mosca, excursiones en velero y días de playa en Bahía Manzano o
+                                Lago Espejo.
+                            </li>
+                            <li>
+                                <strong class="font-semibold">Oportunidad de inversión:</strong>
+                                La alta demanda de alquileres turísticos por familias y viajeros en busca de naturaleza
+                                genera excelentes ingresos
+                                estacionales.
+                            </li>
+                        </ul>
+                    </div>
+                    <video controls class="rounded shadow-md lg:w-2/3 object-cover">
+                        <source src="img/Media_VLA/videos/VLA.mp4" type="video/mp4">
+                    </video>
                 </div>
 
-                <div x-show="estacion === 'otoño'" x-transition>
-                    <p class="mb-4">Explorá los colores del bosque patagónico, caminatas y fotografía de naturaleza.</p>
-                    <img src="img/Media_VLA/Render_Exterior1.JPG" alt="Otoño"
-                        class="rounded shadow-md w-full max-h-[400px] object-cover">
+                <div x-show="estacion === 'otoño'" x-transition class="flex flex-wrap justify-between">
+                    <div class="lg:w-1/3 mx-auto px-3 lg:max-w-1/3 text-gray-800 lg:text-lg lg:my-auto space-y-4 mb-3">
+                        <p>
+                            Una estación tranquila, ideal para escapadas de fin de semana y turismo de bienestar.
+                        </p>
+
+                        <ul class="list-disc list-inside space-y-2">
+                            <li>
+                                <strong class="font-semibold">Actividades destacadas:</strong>
+                                Turismo contemplativo, fotografía de paisajes otoñales, gastronomía regional, avistaje
+                                de aves y descanso en cabañas o
+                                lodges.
+                            </li>
+                            <li>
+                                <strong class="font-semibold">Oportunidad de inversión:</strong>
+                                Crecimiento del turismo de pareja y retiro, ideal para emprendimientos boutique o
+                                cabañas de alta gama.
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Carrusel de 2 imágenes con altura estable -->
+                    <div x-data="{
+                                            images: [
+                                              'img/Media_VLA/estaciones/otonio.jpg',
+                                              'img/Media_VLA/estaciones/otonio2.jpg'
+                                            ],
+                                            current: 0,
+                                            startLoop() {
+                                              setInterval(() => {
+                                                this.current = (this.current + 1) % this.images.length;
+                                              }, 4000);
+                                            }
+                                          }" x-init="startLoop()"
+                        class="relative lg:w-2/3 w-full rounded lg:min-h- md:min-h-[500px] sm:min-h-[350px] min-h-[260px] flex items-center justify-center">
+                        <template x-for="(img, index) in images" :key="index">
+                            <img :src="img" :class="current === index ? 'opacity-100' : 'opacity-0'"
+                                class="absolute transition-opacity duration-700 max-w-full h-auto object-contain rounded" />
+                        </template>
+                    </div>
                 </div>
 
-                <div x-show="estacion === 'invierno'" x-transition class="flex">
-                    <p class="mb-4">Esquí y snowboard en Cerro Bayo, paisajes nevados, chimeneas acogedoras.</p>
-                    <video controls class="rounded shadow-md w-full max-h-[400px] object-cover">
+                <div x-show="estacion === 'invierno'" x-transition class="flex flex-wrap justify-between">
+                    <div class="lg:w-1/3 mx-auto px-3 lg:max-w-1/3 text-gray-800 lg:text-lg lg:my-auto space-y-4 mb-3">
+                        <p>
+                            El <strong class="font-semibold">Cerro Bayo</strong>, centro de esquí boutique, transforma
+                            la villa en uno de
+                            los destinos invernales más exclusivos del país.
+                        </p>
+
+                        <ul class="list-disc list-inside space-y-2">
+                            <li>
+                                <strong class="font-semibold">Actividades destacadas:</strong>
+                                Esquí alpino y de fondo, snowboard, paseos en raquetas, gastronomía en paradores de
+                                montaña, after-ski y
+                                turismo de nieve.
+                            </li>
+                            <li>
+                                <strong class="font-semibold">Oportunidad de inversión:</strong>
+                                La temporada alta de invierno es un motor económico clave, con ocupación plena en
+                                alojamientos y alta
+                                rentabilidad en propiedades cercanas al cerro.
+                            </li>
+                        </ul>
+                    </div>
+                    <video controls class="rounded shadow-md lg:w-2/3 object-cover">
                         <source src="img/Media_VLA/videos/Cerro Bayo 2024.mp4" type="video/mp4">
                     </video>
                 </div>
 
-                <div x-show="estacion === 'primavera'" x-transition>
-                    <p class="mb-4">Florecen los senderos, clima ideal para trekking y observación de aves.</p>
-                    <img src="img/Media_VLA/Render_Exterior1.JPG" alt="Primavera"
-                        class="rounded shadow-md w-full max-h-[400px] object-cover">
+                <div x-show="estacion === 'primavera'" x-transition class="flex flex-wrap justify-between">
+                    <div class="lg:w-1/3 mx-auto px-3 lg:max-w-1/3 text-gray-800 lg:text-lg lg:my-auto space-y-4 mb-3">
+                        <p>
+                            La villa se llena de color y temperaturas agradables, ideal para el turismo activo y
+                            deportivo.
+                        </p>
+
+                        <ul class="list-disc list-inside space-y-2">
+                            <li>
+                                <strong class="font-semibold">Actividades destacadas:</strong>
+                                Caminatas en bosques de arrayanes, cicloturismo, navegación, excursiones a los miradores
+                                y eventos culturales o
+                                deportivos.
+                            </li>
+                            <li>
+                                <strong class="font-semibold">Oportunidad de inversión:</strong>
+                                Temporada creciente para el turismo internacional y de escapadas, ideal para alquileres
+                                temporarios.
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Carrusel de 2 imágenes con altura estable -->
+                    <div x-data="{
+                        images: [
+                          'img/Media_VLA/estaciones/primavera.jpg',
+                          'img/Media_VLA/estaciones/primavera2.jpg'
+                        ],
+                        current: 0,
+                        startLoop() {
+                          setInterval(() => {
+                            this.current = (this.current + 1) % this.images.length;
+                          }, 4000);
+                        }
+                      }" x-init="startLoop()"
+                        class="relative lg:w-2/3 w-full rounded md:min-h-[500px] sm:min-h-[350px] min-h-[260px] flex items-center justify-center">
+                        <template x-for="(img, index) in images" :key="index">
+                            <img :src="img" :class="current === index ? 'opacity-100' : 'opacity-0'"
+                                class="absolute transition-opacity duration-700 max-w-full h-auto object-contain rounded" />
+                        </template>
+                    </div>
                 </div>
             </div>
         </div>
+        <p class="text-lg text-center pb-8 mt-8 mx-8">
+            Villa La Angostura no es solo un lugar para vacacionar: es un destino
+            de cuatro estaciones que garantiza
+            actividad
+            constante, calidad de vida y una inversión inmobiliaria sólida, rentable y con potencial de crecimiento
+            a
+            largo plazo.
+        </p>
     </section>
 
 
@@ -471,7 +668,6 @@
                 </div>
             </div>
 
-
             <div id="image-container" class="w-full h-full overflow-hidden cursor-grab">
                 <img id="overlay-image"
                     class="select-none pointer-events-auto object-contain absolute top-0 left-0 right-0 bottom-0 m-auto"
@@ -479,8 +675,6 @@
             </div>
         </div>
     </div>
-
-
 
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script>
@@ -549,7 +743,6 @@
         }
 
         enableZoomOverlay('#planos .swiper-slide img')
-        enableZoomOverlay('#proyecto img')
 
         imageContainer.addEventListener('wheel', (e) => {
             e.preventDefault()
@@ -607,6 +800,10 @@
         })
     </script>
 
+    <a href="https://wa.me/5491153694056" target="_blank" rel="noopener" class="fixed bottom-6 right-4 z-50">
+        <img src="img/Media_VLA/logos/WhatsApp.png" alt="WhatsApp"
+            class="w-14 h-14 rounded-full hover:scale-125 transition-transform duration-200" />
+    </a>
 </body>
 
 </html>

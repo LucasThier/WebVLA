@@ -46,7 +46,6 @@
 {
     background-color: #000000 !important;
     opacity: 1 !important;
-
 }
 
 .no-select
@@ -67,37 +66,46 @@
 
 .fondo-zoom
 {
-    animation: zoomInOut 45s ease-in-out infinite;
+    animation: zoomInOut 15s ease-in-out infinite;
     object-fit: cover;
-    object-position: center;
-    will-change: transform, object-position;
+    will-change: transform;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
-/* Zoom suave */
 @keyframes zoomInOut
 {
     0%
     {
         transform: scale(1);
-        object-position: center;
+        transform-origin: left center;
     }
 
     25%
     {
-        transform: scale(1.2);
-        object-position: left;
+        transform: scale(1.4);
+        transform-origin: left center;
+    }
+
+    50%
+    {
+        transform: scale(1.4);
+        transform-origin: right center;
     }
 
     75%
     {
         transform: scale(1.2);
-        object-position: right;
+        transform-origin: center center;
     }
 
     100%
     {
         transform: scale(1);
-        object-position: center;
+        transform-origin: center center;
     }
 }
 
@@ -128,14 +136,4 @@
 {
     background-color: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(3px);
-}
-
-.btn-estacion
-{
-    @apply px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition;
-}
-
-.btn-estacion.active
-{
-    @apply bg-blue-700;
 }

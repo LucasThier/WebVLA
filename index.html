@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet" />
 </head>
 
 <body class="bg-white text-gray-800 no-select">
@@ -166,10 +166,10 @@
                 </iframe> -->
             </div>
             <div class="w-full md:w-1/3 text-center md:text-center flex flex-col items-center justify-center">
-                <p class="text-2xl text-justify leading-15 md:pr-15">
+                <p class="text-2xl text-justify leading-12 md:pr-15">
                     Es un refugio contemporáneo en uno de los lugares más mágicos del sur argentino.
                 </p>
-                <p class="text-2xl text-justify leading-15 md:pr-16">
+                <p class="text-2xl text-justify leading-12 md:pr-16">
                     No se trata solo de construir. Se trata de habitar con sentido. De crear un espacio moderno, cómodo
                     y bello, que
                     dialogue con el entorno en lugar de imponerse.
@@ -180,7 +180,7 @@
         <div class="flex items-center justify-between flex-wrap gap-6">
             <div
                 class="w-full md:w-1/3 text-center md:pl-20  md:text-right flex items-center justify-center order-2 md:order-1">
-                <p class="text-2xl text-justify leading-15">
+                <p class="text-2xl text-center leading-12">
                     Departamentos de diseño patagónico moderno, donde la madera, la piedra y la luz natural se combinan
                     con líneas limpias y
                     confort actual. Cada unidad fue pensada para ofrecer armonía, vistas y calidez.
@@ -229,7 +229,7 @@
                         <!-- 3 Ambientes -->
                         <div class="swiper-slide text-center">
                             <h3 class="text-xl font-semibold mb-2">3 Ambientes</h3>
-                            <p>65,12 m2 cub + balcon</p>
+                            <p>65 m2 cub + balcon</p>
                             <img src="img/Media_VLA/unidades/3ambientes.jpeg" class="rounded mx-auto" />
                         </div>
 
@@ -442,12 +442,21 @@
         </div>
 
         <!-- Gradiente inferior -->
-        <div class="absolute bottom-0 left-0 w-full h-12 bg-gradient-to-b from-transparent to-[#CFCFCF] z-10"></div>
+        <!-- <div class="absolute bottom-0 left-0 w-full h-12 bg-gradient-to-b from-transparent to-[#CFCFCF] z-10"></div> -->
     </section>
 
+    <div class="bg-[#C09C6F] p-10 text-white">
+        <h2 data-aos="fade-up" data-aos-duration="1000" class="text-3xl font-bold text-center">Actividades</h2>
+        <!-- <p data-aos="fade-up" data-aos-duration="1000" class="text-justify text-2xl mb-6 max-w-6xl mx-auto">
+            Invertir en Villa La Angostura no solo significa apostar por un entorno natural privilegiado, sino también
+            por un
+            destino que ofrece una fuerte actividad turística durante las cuatro estaciones, lo que garantiza una
+            ocupación
+            sostenida y excelentes oportunidades de rentabilidad inmobiliaria.
+        </p> -->
+    </div>
 
-
-    <section id="actividades" class="bg-[#00000030] pt-16" x-data="{
+    <section id="actividades" class="bg-gray-100 pt-2" x-data="{
           estacion: 'verano',
           init() {
             this.$watch('estacion', () => {
@@ -458,8 +467,8 @@
             });
           }
         }">
-        <h2 class="text-3xl font-bold mb-8 text-center">Actividades</h2>
-        <p class="text-lg text-center mb-8 mx-8">
+        <!-- <h2 class="text-3xl font-bold mb-8 text-center">Actividades</h2>-->
+        <p class="text-lg text-center mt-5 mb-8 mx-8">
             Invertir en Villa La Angostura no solo significa apostar por un entorno natural privilegiado, sino también
             por un
             destino que ofrece una fuerte actividad turística durante las cuatro estaciones, lo que garantiza una
@@ -468,15 +477,15 @@
         </p>
 
 
-        <div class="bg-gray-100 rounded shadow-md overflow-hidden mx-6 mb-8">
+        <div class="bg-white rounded shadow-md overflow-hidden mx-6 mb-8">
 
             <!-- Pestañas -->
             <div class="flex flex-wrap border-b border-gray-300">
                 <template x-for="epoca in ['verano', 'otoño', 'invierno', 'primavera']" :key="epoca">
                     <div @click="estacion = epoca" x-text="epoca.charAt(0).toUpperCase() + epoca.slice(1)"
                         class="flex-1 text-center py-4 cursor-pointer font-semibold transition-all select-none" :class="{
-                  'bg-gray-800 text-white': estacion === epoca,
-                  'bg-gray-200 text-gray-700 hover:bg-gray-300': estacion !== epoca
+                  'bg-[#8C6B45] text-white': estacion === epoca,
+                  'bg-[#F5EEE5] text-gray-700 hover:bg-[#DCC4A3]': estacion !== epoca
                 }"></div>
                 </template>
             </div>

@@ -1,9 +1,12 @@
 @import "tailwindcss";
 
 
+
 :root
 {
     color-scheme: only light;
+    font-family: 'Open Sans', sans-serif;
+    letter-spacing: 1px;
 }
 
 

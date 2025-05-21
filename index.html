@@ -38,6 +38,8 @@
                 <a href="#proyecto" class="block text-lg hover:underline transition-all duration-200">El
                     Proyecto</a>
                 <a href="#lugar" class="block text-lg hover:underline transition-all duration-200">Lugar</a>
+                <a href="#planos" class="block text-lg hover:underline transition-all duration-200">Planos</a>
+                <a href="#inversion" class="block text-lg hover:underline transition-all duration-200">Inversion</a>
                 <a href="#galeria" class="block text-lg hover:underline transition-all duration-200">Galería</a>
                 <a href="#contacto" class="block text-lg hover:underline transition-all duration-200">Contacto</a>
             </nav>
@@ -139,20 +141,20 @@
     <!-- <div class="h-10 bg-gradient-to-b from-[#CFCFCF] to-gray-200"></div> -->
 
     <div class="bg-[#C09C6F] p-10 text-white">
-        <h2 data-aos="fade-up" data-aos-duration="1000" class="text-3xl font-bold text-center mb-6 ">La Experiencia</h2>
-        <p data-aos="fade-up" data-aos-duration="1000" class="text-justify text-2xl mb-6 max-w-6xl mx-auto">
-            Ya sea como tu lugar en la montaña, una inversión de alto valor turístico o un destino para reconectar
-            con vos mismo,
-            este es un lugar que ofrece más que metros cuadrados: ofrece una sensación.
-        </p>
-        <p data-aos="fade-up" data-aos-duration="1000" class="text-center text-2xl max-w-6xl mx-auto">
-            Angostura no es solo un destino: es un refugio natural entre lago y montaña, donde el tiempo parece
-            moverse distinto.
-        </p>
+        <h2 data-aos="fade-up" data-aos-duration="1000" class="text-3xl font-bold text-center">La Experiencia</h2>
     </div>
 
     <section id="videos" class="bg-gray-200 p-6">
 
+        <p data-aos="fade-up" data-aos-duration="1000" class="text-center text-2xl mb-6 max-w-6xl mx-auto">
+            Ya sea como tu lugar en la montaña, una inversión de alto valor turístico o un destino para reconectar
+            con vos mismo,
+            este es un lugar que ofrece más que metros cuadrados: ofrece una sensación.
+        </p>
+        <p data-aos="fade-up" data-aos-duration="1000" class="text-center text-2xl max-w-6xl mx-auto mb-6">
+            Angostura no es solo un destino: es un refugio natural entre lago y montaña, donde el tiempo parece
+            moverse distinto.
+        </p>
 
         <div class="flex items-center justify-between flex-wrap mb-12">
             <div class="w-full md:w-3/5 h-[15rem] md:h-[30rem] mx-auto" data-aos="fade" data-aos-duration="1000">
@@ -250,7 +252,7 @@
             </div>
         </div>
 
-        <div class="bg-[#C09C6F] p-10 text-white">
+        <div class="bg-[#C09C6F] p-10 text-white mb-6">
             <h2 data-aos="fade-up" data-aos-duration="1000" class="text-3xl font-bold text-center">Plantas</h2>
         </div>
 
@@ -350,7 +352,7 @@
         });
     </script>
 
-    <section id="lugar" class="relative scroll-mt-28 overflow-hidden text-gray-800 p-8 md:p-16" x-data="{
+    <section id="lugar" class="relative overflow-hidden text-gray-800 p-8 md:p-16" x-data="{
             lugarBloques: [
             {
                 titulo: 'Descubrí Villa La Angostura: Un Paraíso para Vivir e Invertir',
@@ -420,7 +422,7 @@
 
         <!-- Flechas laterales -->
         <button @click="cambiar('anterior')" aria-label="Texto anterior"
-            class="absolute md:left-4 left-2 top-1/2 -translate-y-1/2 text-white hover:text-green-400 transition z-20">
+            class="absolute md:left-4 left-2 top-1/2 -translate-y-1/2 text-white hover:text-[#DCC4A3] transition z-20">
             <svg xmlns="http://www.w3.org/2000/svg" class="md:h-16 sm:h-10 h-8" fill="none" viewBox="0 0 24 24"
                 stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M15 19l-7-7 7-7" />
@@ -428,7 +430,7 @@
         </button>
 
         <button @click="cambiar('siguiente')" aria-label="Texto siguiente"
-            class="absolute md:right-4 sm:right-2 right-0 top-1/2 -translate-y-1/2 text-white hover:text-green-400 transition z-20">
+            class="absolute md:right-4 sm:right-2 right-0 top-1/2 -translate-y-1/2 text-white hover:text-[#DCC4A3] transition z-20">
             <svg xmlns="http://www.w3.org/2000/svg" class="md:h-16 sm:h-10 h-8" fill="none" viewBox="0 0 24 24"
                 stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7" />
@@ -458,16 +460,11 @@
     </div>
 
     <section id="actividades" class="bg-gray-100 pt-2" x-data="{
-          estacion: 'verano',
-          init() {
-            this.$watch('estacion', () => {
-              document.querySelectorAll('#actividades video').forEach(v => {
-                v.pause();
-                console.log('Video pausado');
-              });
-            });
-          }
-        }">
+            estacion: 'verano',
+            init() {
+
+            }
+          }">
         <!-- <h2 class="text-3xl font-bold mb-8 text-center">Actividades</h2>-->
         <p class="text-lg text-center mt-5 mb-8 mx-8">
             Invertir en Villa La Angostura no solo significa apostar por un entorno natural privilegiado, sino también
@@ -500,7 +497,7 @@
                             en un paraíso natural ideal para el ecoturismo y la aventura.
                         </p>
 
-                        <ul class="list-disc list-inside space-y-2">
+                        <ul class="space-y-2">
                             <li>
                                 <strong class="font-semibold">Actividades destacadas:</strong>
                                 Senderismo, trekking en los cerros Belvedere e Inacayal, mountain bike, paseos en kayak
@@ -516,7 +513,7 @@
                             </li>
                         </ul>
                     </div>
-                    <video controls class="rounded shadow-md lg:w-2/3 object-cover">
+                    <video id="video-verano" controls class="rounded shadow-md lg:w-2/3 object-cover">
                         <source src="img/Media_VLA/videos/VLA.mp4" type="video/mp4">
                     </video>
                 </div>
@@ -527,7 +524,7 @@
                             Una estación tranquila, ideal para escapadas de fin de semana y turismo de bienestar.
                         </p>
 
-                        <ul class="list-disc list-inside space-y-2">
+                        <ul class="space-y-2">
                             <li>
                                 <strong class="font-semibold">Actividades destacadas:</strong>
                                 Turismo contemplativo, fotografía de paisajes otoñales, gastronomía regional, avistaje
@@ -571,7 +568,7 @@
                             los destinos invernales más exclusivos del país.
                         </p>
 
-                        <ul class="list-disc list-inside space-y-2">
+                        <ul class="space-y-2">
                             <li>
                                 <strong class="font-semibold">Actividades destacadas:</strong>
                                 Esquí alpino y de fondo, snowboard, paseos en raquetas, gastronomía en paradores de
@@ -586,7 +583,7 @@
                             </li>
                         </ul>
                     </div>
-                    <video controls class="rounded shadow-md lg:w-2/3 object-cover">
+                    <video id="video-invierno" controls class="rounded shadow-md lg:w-2/3 object-cover">
                         <source src="img/Media_VLA/videos/Cerro Bayo 2024.mp4" type="video/mp4">
                     </video>
                 </div>
@@ -598,7 +595,7 @@
                             deportivo.
                         </p>
 
-                        <ul class="list-disc list-inside space-y-2">
+                        <ul class="space-y-2">
                             <li>
                                 <strong class="font-semibold">Actividades destacadas:</strong>
                                 Caminatas en bosques de arrayanes, cicloturismo, navegación, excursiones a los miradores
@@ -845,6 +842,28 @@
         <img src="img/Media_VLA/logos/WhatsApp.png" alt="WhatsApp"
             class="w-20 h-20 rounded-full hover:scale-125 transition-transform duration-200" />
     </a>
+
+    <script>
+        // Ajusta este valor según la altura que quieras compensar (ej. header fijo)
+        const offset = 100;
+
+        document.querySelectorAll('a[href^="#"]').forEach(link => {
+            link.addEventListener('click', e => {
+                const targetId = link.getAttribute('href').slice(1);
+                const targetEl = document.getElementById(targetId);
+                if (!targetEl) return;
+
+                e.preventDefault();
+
+                const top = targetEl.getBoundingClientRect().top + window.scrollY - offset;
+
+                window.scrollTo({
+                    top,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>

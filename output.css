@@ -762,6 +762,13 @@
       }
     }
   }
+  .hover\:text-\[\#DCC4A3\] {
+    &:hover {
+      @media (hover: hover) {
+        color: #DCC4A3;
+      }
+    }
+  }
   .hover\:text-green-400 {
     &:hover {
       @media (hover: hover) {

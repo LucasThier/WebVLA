@@ -650,6 +650,9 @@
   .border-gray-300 {
     border-color: var(--color-gray-300);
   }
+  .bg-\[\#\#C09C6F\] {
+    background-color: ##C09C6F;
+  }
   .bg-\[\#\#c09c6f\] {
     background-color: ##c09c6f;
   }

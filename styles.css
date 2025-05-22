@@ -7,11 +7,9 @@
     letter-spacing: 1px;
 }
 
-.header
+.borde-arr
 {
-    background-color: #00000084;
-    height: 100px;
-    backdrop-filter: blur(3px);
+    border-top: 2px solid #c09c6f;
 }
 
 #hero-text
@@ -25,13 +23,17 @@
 {
     color: #aaa !important;
     opacity: 0.6;
+    scale: 1.25;
+    font-size: 300rem;
+    /* tamaño general de la flecha */
+    font-weight: 1000;
     transition: opacity 0.2s ease;
 }
 
 .swiper-button-next:hover,
 .swiper-button-prev:hover
 {
-    color: #000000 !important;
+    color: #DCC4A3 !important;
     opacity: 1;
     /* más visibles al pasar el mouse */
 }

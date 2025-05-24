@@ -382,6 +382,12 @@
   .min-h-\[3rem\] {
     min-height: 3rem;
   }
+  .min-h-\[100px\] {
+    min-height: 100px;
+  }
+  .min-h-\[150px\] {
+    min-height: 150px;
+  }
   .min-h-\[260px\] {
     min-height: 260px;
   }

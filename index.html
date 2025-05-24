@@ -83,7 +83,7 @@
           'img/Media_VLA/Render_Exterior6.webp',
           'img/Media_VLA/Render_Exterior2.jpg',
           'img/Media_VLA/Render_Exterior5.jpg',
-          'img/Media_VLA/Render_Exterior1.jpg'
+          'img/Media_VLA/Render_Exterior1.JPG'
         ],
         current: 0,
         startLoop() {
@@ -119,8 +119,8 @@
                       'img/Media_VLA/Render_Exterior2.jpg',
                       'img/Media_VLA/Render_Exterior5.jpg',
                       'img/Media_VLA/Render_Exterior5.jpg',
-                      'img/Media_VLA/Render_Exterior1.jpg',
-                      'img/Media_VLA/Render_Exterior1.jpg',
+                      'img/Media_VLA/Render_Exterior1.JPG',
+                      'img/Media_VLA/Render_Exterior1.JPG',
                       'img/Media_VLA/Render_Exterior6.webp'
                     ],
                     current: 0,
@@ -325,12 +325,12 @@
             </h2>
         </div>
         <div class="container mx-auto px-4">
-            <!-- <h2 class="text-3xl font-bold text-center mb-8 w-full">Los departamentos</h2> -->
-
             <div class="relative">
-                <div class="swiper-button-prev swiper-button-prev-uni absolute left-10 top-1/2 -translate-y-1/2 z-10">
+                <div
+                    class="swiper-button-prev swiper-button-prev-uni absolute left-10 top-1/2 -translate-y-1/2 z-10 hidden md:block">
                 </div>
-                <div class="swiper-button-next swiper-button-next-uni absolute right-10 top-1/2 -translate-y-1/2 z-10">
+                <div
+                    class="swiper-button-next swiper-button-next-uni absolute right-10 top-1/2 -translate-y-1/2 z-10 hidden md:block">
                 </div>
 
                 <div class="swiper swiper-uni w-5/6">
@@ -339,33 +339,41 @@
                         <div class="swiper-slide text-center">
                             <h3 class="text-xl font-semibold mb-2">Monoambiente</h3>
                             <p>Desde 35 m2 cub + balcon</p>
-                            <img src="img/Media_VLA/unidades/Monoambiente.jpeg" class="rounded mx-auto" />
+                            <a href="img/Media_VLA/unidades/Monoambiente.jpeg" class="glightbox"
+                                data-gallery="unidades">
+                                <img src="img/Media_VLA/unidades/Monoambiente.jpeg" class="rounded mx-auto" />
+                            </a>
                         </div>
 
                         <!-- 2 Ambientes -->
                         <div class="swiper-slide text-center">
                             <h3 class="text-xl font-semibold mb-2">2 Ambientes</h3>
                             <p>Desde 45 m2 cub + balcon</p>
-                            <img src="img/Media_VLA/unidades/2ambientes.jpeg" class="rounded mx-auto" />
+                            <a href="img/Media_VLA/unidades/2ambientes.jpeg" class="glightbox" data-gallery="unidades">
+                                <img src="img/Media_VLA/unidades/2ambientes.jpeg" class="rounded mx-auto" />
+                            </a>
                         </div>
 
                         <!-- 3 Ambientes -->
                         <div class="swiper-slide text-center">
                             <h3 class="text-xl font-semibold mb-2">3 Ambientes</h3>
                             <p>65 m2 cub + balcon</p>
-                            <img src="img/Media_VLA/unidades/3ambientes.jpeg" class="rounded mx-auto" />
+                            <a href="img/Media_VLA/unidades/3ambientes.jpeg" class="glightbox" data-gallery="unidades">
+                                <img src="img/Media_VLA/unidades/3ambientes.jpeg" class="rounded mx-auto" />
+                            </a>
                         </div>
 
                         <!-- Dúplex -->
                         <div class="swiper-slide text-center">
                             <h3 class="text-xl font-semibold mb-2">Dúplex</h3>
                             <p>Desde 59 m2 cub + balcon</p>
-                            <img src="img/Media_VLA/unidades/duplex.jpeg" class="rounded mx-auto" />
+                            <a href="img/Media_VLA/unidades/duplex.jpeg" class="glightbox" data-gallery="unidades">
+                                <img src="img/Media_VLA/unidades/duplex.jpeg" class="rounded mx-auto" />
+                            </a>
                         </div>
                     </div>
                 </div>
                 <div class="my-custom-pagination-uni flex justify-center gap-2 mb-6"></div>
-
             </div>
         </div>
 
@@ -374,14 +382,12 @@
         </div>
 
         <div class="container mx-auto px-4">
-            <!-- <h2 class="text-3xl font-bold text-center mb-8 w-full">Plantas</h2> -->
-
             <div class="relative">
                 <div
-                    class="swiper-button-prev swiper-button-prev-planos absolute left-10 top-1/2 -translate-y-1/2 z-10">
+                    class="swiper-button-prev swiper-button-prev-planos absolute left-10 top-1/2 -translate-y-1/2 z-10 hidden md:block">
                 </div>
                 <div
-                    class="swiper-button-next swiper-button-next-planos absolute right-10 top-1/2 -translate-y-1/2 z-10">
+                    class="swiper-button-next swiper-button-next-planos absolute right-10 top-1/2 -translate-y-1/2 z-10 hidden md:block">
                 </div>
 
                 <div class="swiper swiper-planos w-5/6">
@@ -389,36 +395,45 @@
                         <!-- Subsuelo -->
                         <div class="swiper-slide text-center">
                             <h3 class="text-xl font-semibold mb-2">Subsuelo</h3>
-                            <img src="img/Media_VLA/planos/SmallSubSuelo.jpg" class="rounded mx-auto" />
+                            <a href="img/Media_VLA/planos/SubSuelo.jpg" class="glightbox" data-gallery="planos">
+                                <img src="img/Media_VLA/planos/SmallSubSuelo.jpg" class="rounded mx-auto" />
+                            </a>
                         </div>
 
                         <!-- Planta Baja -->
                         <div class="swiper-slide text-center">
                             <h3 class="text-xl font-semibold mb-2">Planta Baja</h3>
-                            <img src="img/Media_VLA/planos/SmallPlanta0.jpg" class="rounded mx-auto" />
+                            <a href="img/Media_VLA/planos/Planta0.jpg" class="glightbox" data-gallery="planos">
+                                <img src="img/Media_VLA/planos/SmallPlanta0.jpg" class="rounded mx-auto" />
+                            </a>
                         </div>
 
                         <!-- Primer Piso -->
                         <div class="swiper-slide text-center">
                             <h3 class="text-xl font-semibold mb-2">Primer Piso</h3>
-                            <img src="img/Media_VLA/planos/SmallPlanta1.jpg" class="rounded mx-auto" />
+                            <a href="img/Media_VLA/planos/Planta1.jpg" class="glightbox" data-gallery="planos">
+                                <img src="img/Media_VLA/planos/SmallPlanta1.jpg" class="rounded mx-auto" />
+                            </a>
                         </div>
 
                         <!-- Segundo Piso -->
                         <div class="swiper-slide text-center">
                             <h3 class="text-xl font-semibold mb-2">Segundo Piso</h3>
-                            <img src="img/Media_VLA/planos/SmallPlanta2.jpg" class="rounded mx-auto" />
+                            <a href="img/Media_VLA/planos/Planta2.jpg" class="glightbox" data-gallery="planos">
+                                <img src="img/Media_VLA/planos/SmallPlanta2.jpg" class="rounded mx-auto" />
+                            </a>
                         </div>
 
                         <!-- Tercer Piso -->
                         <div class="swiper-slide text-center">
                             <h3 class="text-xl font-semibold mb-2">Tercer Piso</h3>
-                            <img src="img/Media_VLA/planos/SmallPlanta3.jpg" class="rounded mx-auto" />
+                            <a href="img/Media_VLA/planos/Planta3.jpg" class="glightbox" data-gallery="planos">
+                                <img src="img/Media_VLA/planos/SmallPlanta3.jpg" class="rounded mx-auto" />
+                            </a>
                         </div>
                     </div>
                 </div>
                 <div class="my-custom-pagination-planos flex justify-center gap-2 mb-6"></div>
-
             </div>
         </div>
     </section>
@@ -651,7 +666,8 @@
                             </li>
                         </ul>
                     </div>
-                    <video id="video-verano" controls class="rounded shadow-md lg:w-2/3 object-cover">
+                    <video id="video-verano" playsinline controls
+                        class="video-auto rounded shadow-md lg:w-2/3 object-cover">
                         <source src="img/Media_VLA/videos/VLA.mp4" type="video/mp4">
                     </video>
                 </div>
@@ -914,153 +930,11 @@
         <p class="text-left">© Aura Andina - Villa la Angostura, Argentina</p>
     </footer>
 
-    <!-- overlay de imagenes -->
-    <div id="image-overlay" class="fixed inset-0 z-50 flex items-center justify-center hidden bg-overlay">
-        <div class="relative w-[90vw] h-[90vh] overflow-hidden">
-            <button id="close-overlay" class="absolute top-2 right-2 z-10 bg-[#C09C6F] rounded">
-                <img src="img/Media_VLA/icons/closeBtn.png" alt="Cerrar" class="w-13 h-13" />
-            </button>
-
-            <div class="absolute top-1/2 right-2 z-10 flex-col gap-6 bg-[#C09C6F] shadow rounded p-2">
-                <div id="zoom-in" class="z-10 cursor-pointer">
-                    <img src="img/Media_VLA/icons/zoomInBtn.png" alt="Zoom In" class="w-12 h-12" />
-                </div>
-
-                <div id="zoom-out" class="z-10 cursor-pointer">
-                    <img src="img/Media_VLA/icons/zoomOutBtn.png" alt="Zoom Out" class="w-12 h-12" />
-                </div>
-            </div>
-
-            <div id="image-container" class="w-full h-full overflow-hidden cursor-grab">
-                <img id="overlay-image"
-                    class="select-none pointer-events-auto object-contain absolute top-0 left-0 right-0 bottom-0 m-auto"
-                    draggable="false" />
-            </div>
-        </div>
-    </div>
-
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script>
         AOS.init({
             once: false
         });
-    </script>
-
-    <script>
-        const overlay = document.getElementById('image-overlay')
-        const overlayImg = document.getElementById('overlay-image')
-        const imageContainer = document.getElementById('image-container')
-        const closeBtn = document.getElementById('close-overlay')
-        const zoomInBtn = document.getElementById('zoom-in')
-        const zoomOutBtn = document.getElementById('zoom-out')
-
-        let scale = 0.4
-        let posX = 0
-        let posY = 0
-        let isDragging = false
-        let startX, startY
-
-        const updateTransform = () => {
-            const containerWidth = imageContainer.offsetWidth
-            const containerHeight = imageContainer.offsetHeight
-            const imgWidth = overlayImg.naturalWidth
-            const imgHeight = overlayImg.naturalHeight
-
-            const scaledWidth = (imgWidth * scale) / overlayImg.naturalWidth * overlayImg.offsetWidth
-            const scaledHeight = (imgHeight * scale) / overlayImg.naturalHeight * overlayImg.offsetHeight
-
-            const maxX = Math.max((scaledWidth - containerWidth) / (2 * scale), 0)
-            const maxY = Math.max((scaledHeight - containerHeight) / (2 * scale), 0)
-
-            posX = Math.min(Math.max(posX, -maxX), maxX)
-            posY = Math.min(Math.max(posY, -maxY), maxY)
-
-            overlayImg.style.transform = `scale(${scale}) translate(${posX}px, ${posY}px)`
-        }
-
-        zoomInBtn.addEventListener('click', () => {
-            scale = Math.min(scale + 0.5, 5)
-            updateTransform()
-        })
-
-        zoomOutBtn.addEventListener('click', () => {
-            scale = Math.max(scale - 0.5, 0.4)
-            posX = 0
-            posY = 0
-            updateTransform()
-        })
-
-        const enableZoomOverlay = (selector) => {
-            document.querySelectorAll(selector).forEach(img => {
-                img.style.cursor = 'pointer'
-                img.addEventListener('click', () => {
-                    document.body.classList.add('overflow-hidden')
-                    overlayImg.src = img.src.replace('Small', '')
-                    overlay.classList.remove('hidden')
-                    scale = 0.4
-                    posX = 0
-                    posY = 0
-                    updateTransform()
-                })
-            })
-        }
-
-        enableZoomOverlay('#planos .swiper-slide img')
-
-        imageContainer.addEventListener('wheel', (e) => {
-            e.preventDefault()
-            const delta = Math.sign(e.deltaY)
-            if (delta < 0) {
-                scale = Math.min(scale + 0.2, 5)
-            } else {
-                scale = Math.max(scale - 0.2, 0.4)
-                if (scale === 1) {
-                    posX = 0
-                    posY = 0
-                }
-            }
-            updateTransform()
-        }, { passive: false })
-
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') {
-                document.body.classList.remove('overflow-hidden')
-                overlay.classList.add('hidden')
-                overlayImg.src = ''
-            }
-        })
-
-        closeBtn.addEventListener('click', () => {
-            document.body.classList.remove('overflow-hidden')
-            overlay.classList.add('hidden')
-            overlayImg.src = ''
-        })
-
-        imageContainer.addEventListener('mousedown', (e) => {
-            //if (scale <= 1) return
-            isDragging = true
-            startX = e.clientX
-            startY = e.clientY
-            imageContainer.classList.remove('cursor-grab')
-            imageContainer.classList.add('cursor-grabbing')
-        })
-
-        window.addEventListener('mouseup', () => {
-            isDragging = false
-            imageContainer.classList.remove('cursor-grabbing')
-            imageContainer.classList.add('cursor-grab')
-        })
-
-        window.addEventListener('mousemove', (e) => {
-            if (!isDragging) return
-            const dx = e.clientX - startX
-            const dy = e.clientY - startY
-            startX = e.clientX
-            startY = e.clientY
-            posX += dx / scale
-            posY += dy / scale
-            updateTransform()
-        })
     </script>
 
     <a href="https://wa.me/5491153694056" target="_blank" rel="noopener" class="fixed bottom-6 right-4 z-50">

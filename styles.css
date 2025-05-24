@@ -44,6 +44,14 @@
     opacity: 1 !important;
 }
 
+/* Forzar visibilidad de botones en toolbar */
+.lg-toolbar
+{
+    opacity: 1 !important;
+    visibility: visible !important;
+    transition: none !important;
+}
+
 .no-select
 {
     user-select: none;
@@ -57,6 +65,8 @@
 {
     user-select: none;
     -webkit-user-drag: none;
+    transition: transform 0.3s ease;
+    display: inline-block;
     /* opcional: evita arrastrar la imagen */
 }
 

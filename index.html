@@ -77,7 +77,6 @@
 
     <section id="hero" class="relative h-screen overflow-hidden" data-aos="fade" data-aos-duration="1000">
 
-        <!-- Carrusel de fondo animado -->
         <div x-data="{
         images: [
           'img/Media_VLA/Render_Exterior6.webp',
@@ -98,10 +97,8 @@
             </template>
         </div>
 
-        <!-- Gradiente inferior -->
         <div class="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-b from-transparent to-white z-10"></div>
 
-        <!-- Texto encima -->
         <div id="hero-text" class="relative z-20 flex flex-col items-center justify-center h-full text-center px-4"
             data-aos="zoom-in-up" data-aos-duration="3000">
             <h1 class="text-4xl md:text-9xl">Aura Andina</h1>
@@ -110,8 +107,9 @@
     </section>
 
     <section id="proyecto" class="p-6 bg-white overflow-x-hidden">
-        <div class="flex flex-wrap justify-between items-center">
-            <div class="w-full md:w-1/2">
+
+        <div class="flex flex-wrap md:flex-nowrap justify-between items-center">
+            <div class="w-full md:w-1/2 order-1 md:order-1 md:mb-0 mb-2">
                 <div x-data="{
                     images: [
                       'img/Media_VLA/Render_Exterior6.webp',
@@ -140,48 +138,24 @@
                 </div>
             </div>
 
-            <div class="w-full md:w-1/3 mx-auto text-center" data-aos="fade-left" data-aos-duration="1000">
+            <div class="w-full md:w-1/3 mx-auto text-center order-2 md:order-2" data-aos="fade-left"
+                data-aos-duration="1000">
                 <h2 class="md:text-3xl text-xl mb-2">EL PROYECTO</h2>
                 <p class="text-sm md:text-sm lg:text-xl md:leading-10 leading-8 text-justify">
-                    Departamentos de diseño
-                    patagónico
-                    moderno,
-                    donde
-                    la
-                    madera
-                    y sus
-                    variantes, la
-                    piedra y la luz natural se combinan con
-                    líneas limpias y todo el confort actual. Cada unidad fue pensada para ofrecer armonía, vistas y
-                    calidez. A construirse
-                    con materiales de excelente calidad, manteniendo su estilo. Los mejores servicios y confort como ser
-                    piso radiante,
-                    carpinterías de PVC tipo DVH, cocinas completas, sistema de agua presurizado, internet de alta
-                    velocidad, etc
+                    Departamentos de diseño patagónico moderno, donde la madera y sus variantes, la piedra y la luz
+                    natural
+                    se combinan con líneas limpias y todo el confort actual. Cada unidad fue pensada para ofrecer
+                    armonía,
+                    vistas y calidez. A construirse con materiales de excelente calidad, manteniendo su estilo.
+                    Los mejores servicios y confort como ser piso radiante, carpinterías de PVC tipo DVH, cocinas
+                    completas,
+                    sistema de agua presurizado, internet de alta velocidad, etc.
                 </p>
             </div>
         </div>
 
-        <div class="flex flex-wrap justify-between items-center mt-12">
-            <div class="w-full md:w-1/2 md:pr-10 mx-auto text-center md:text-center" data-aos="fade-right"
-                data-aos-duration="1000">
-                <h2 class="md:text-3xl text-xl mb-2">CARACTERÍSTICAS</h2>
-                <p class="text-sm md:text-sm lg:text-xl md:leading-10 leading-8 text-justify">
-                    El complejo consta de subsuelo de cocheras, PB + 3 pisos con
-                    38 departamentos de 1 o 2 y 3 ambientes con balcones
-                    aterrazados de deck con increíbles vistas a la montaña.
-                    Todos con cocheras subterráneas desde donde
-                    se puede acceder a
-                    las unidades. Sum con piscina in-out climatizada integrada, sector para parrillas, laundry y
-                    bauleras.
-                    Emplazados en la mitad del
-                    bosque y la montaña, con una vista excepcional al cordón del Bayo, cerca de todo y lejos de los
-                    mayores movimientos de
-                    VLA en temporada alta.
-                </p>
-            </div>
-
-            <div class="w-full md:w-1/2">
+        <div class="flex flex-wrap md:flex-nowrap justify-between items-center mt-5 md:mt-0">
+            <div class="w-full md:w-1/2 order-3 md:order-2 mb-2 md:mb-0 ">
                 <div x-data="{
                     images: [
                       'img/Media_VLA/Render_Interior1.jpg',
@@ -209,6 +183,19 @@
                     </template>
                 </div>
             </div>
+
+            <div class="w-full md:w-1/2 md:pr-10 mx-auto text-center md:text-center order-4 md:order-1"
+                data-aos="fade-right" data-aos-duration="1000">
+                <h2 class="md:text-3xl text-xl mb-2">CARACTERÍSTICAS</h2>
+                <p class="text-sm md:text-sm lg:text-xl md:leading-10 leading-8 text-justify">
+                    El complejo consta de subsuelo de cocheras, PB + 3 pisos con 38 departamentos de 1 o 2 y 3 ambientes
+                    con balcones aterrazados de deck con increíbles vistas a la montaña. Todos con cocheras subterráneas
+                    desde donde se puede acceder a las unidades. SUM con piscina in-out climatizada integrada,
+                    sector para parrillas, laundry y bauleras. Emplazados en la mitad del bosque y la montaña,
+                    con una vista excepcional al cordón del Bayo, cerca de todo y lejos de los mayores movimientos
+                    de VLA en temporada alta.
+                </p>
+            </div>
         </div>
     </section>
 
@@ -229,9 +216,6 @@
         })
     </script>
 
-
-    <!-- <div class="h-10 bg-gradient-to-b from-[#CFCFCF] to-gray-200"></div> -->
-
     <div class="bg-[#C09C6F] p-10 text-white">
         <h2 data-aos="fade-up" data-aos-duration="1000" class="text-3xl font-bold text-center">LA EXPERIENCIA</h2>
     </div>
@@ -240,61 +224,57 @@
 
         <p data-aos="fade-up" data-aos-duration="1000"
             class="text-center text-sm md:text-sm lg:text-xl md:leading-10 leading-8  mb-6 max-w-6xl mx-auto">
-            Ya sea como tu lugar en la montaña, una inversión de alto valor turístico o un destino para reconectar
-            con vos mismo,
+            Ya sea como tu lugar en la montaña, una inversión de alto valor turístico o un destino para reconectar con
+            vos
+            mismo,
             este es un lugar que ofrece más que metros cuadrados: ofrece una sensación.
         </p>
+
         <p data-aos="fade-up" data-aos-duration="1000"
             class="text-center text-sm md:text-sm lg:text-xl md:leading-10 leading-8  max-w-6xl mx-auto mb-6">
-            Angostura no es solo un destino: es un refugio natural entre lago y montaña, donde el tiempo parece
-            moverse distinto.
+            Angostura no es solo un destino: es un refugio natural entre lago y montaña, donde el tiempo parece moverse
+            distinto.
         </p>
+
         <div class="borde-arr mb-4"></div>
 
-        <div class="flex items-center justify-between flex-wrap mb-12">
-            <div class="w-full md:w-3/5 h-[15rem] md:h-[30rem] mx-auto" data-aos="fade" data-aos-duration="1000">
+        <div class="flex flex-wrap md:flex-nowrap items-center justify-between mb-12">
+            <div class="w-full md:w-3/5 h-[15rem] md:h-[30rem] mx-auto order-1 md:order-1" data-aos="fade"
+                data-aos-duration="1000">
                 <video playsinline class="video-auto w-full h-full rounded shadow-md object-cover" preload="none" loop
                     poster="img/Media_VLA/Render_Exterior6.webp" muted>
                     <source src="img/Media_VLA/Video_Exterior.mp4" type="video/mp4">
                 </video>
-                <!-- <iframe loading="lazy" width="100%" height="100%" src="https://www.youtube.com/embed/xzCF9KlZ4Zw?rel=0"
-                    title="Render del Exterior" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen class="rounded shadow-lg">
-                </iframe> -->
             </div>
-            <div class="w-full md:w-1/3 text-center md:text-center flex flex-col items-center justify-center">
-                <p class="text-sm md:text-sm lg:text-xl md:leading-12 leading-8  text-center md:pr-15">
+
+            <div
+                class="w-full md:w-1/3 text-center md:text-center flex flex-col items-center justify-center order-2 md:order-2">
+                <p class="text-sm md:text-sm lg:text-xl md:leading-12 leading-8 text-center md:pr-15">
                     Es un refugio contemporáneo en uno de los lugares más mágicos del sur argentino.
                 </p>
                 <p class="text-sm md:text-sm lg:text-xl md:leading-12 text-center leading-8 md:pr-16">
-                    No se trata solo de construir. Se trata de habitar con sentido, crear un espacio moderno, cómodo
-                    y bello, que
+                    No se trata solo de construir. Se trata de habitar con sentido, crear un espacio moderno, cómodo y
+                    bello, que
                     dialogue con el entorno en lugar de imponerse.
                 </p>
             </div>
         </div>
 
-        <div class="flex items-center justify-between flex-wrap gap-6">
-            <div
-                class="w-full md:w-1/3 text-center md:pl-20  md:text-right flex items-center justify-center order-2 md:order-1">
-                <p class="text-sm md:text-sm lg:text-xl md:leading-12 leading-8 text-center">
-                    Departamentos de diseño patagónico moderno, donde la madera, la piedra y la luz natural se combinan
-                    con líneas limpias y
-                    confort actual. Cada unidad fue pensada para ofrecer armonía, vistas y calidez.
-                </p>
-            </div>
-            <div class="w-full md:w-3/5 h-[15rem] md:h-[30rem] mx-auto order-1 md:order-2" data-aos="fade"
+        <div class="flex flex-wrap md:flex-nowrap items-center justify-between gap-6">
+            <div class="w-full md:w-3/5 h-[15rem] md:h-[30rem] mx-auto order-3 md:order-2" data-aos="fade"
                 data-aos-duration="1000">
                 <video class="video-auto w-full h-full rounded shadow-md object-cover" muted playsinline loop
                     preload="none" poster="img/Media_VLA/Render_Interior1.jpg">
                     <source src="img/Media_VLA/Video_interor.mp4" type="video/mp4">
                 </video>
-                <!-- <iframe loading="lazy" width="100%" height="100%" src="https://www.youtube.com/embed/jQ69rAj5Zi0?rel=0"
-                    title="Render del Interior" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen class="rounded shadow-lg">
-                </iframe> -->
+            </div>
+
+            <div
+                class="w-full md:w-1/3 text-center md:text-right flex items-center justify-center order-4 md:order-1 md:pl-20">
+                <p class="text-sm md:text-sm lg:text-xl md:leading-12 leading-8 text-center">
+                    Departamentos de diseño patagónico moderno, donde la madera, la piedra y la luz natural se combinan
+                    con líneas limpias y confort actual. Cada unidad fue pensada para ofrecer armonía, vistas y calidez.
+                </p>
             </div>
         </div>
     </section>
@@ -327,10 +307,10 @@
         <div class="container mx-auto px-4">
             <div class="relative">
                 <div
-                    class="swiper-button-prev swiper-button-prev-uni absolute left-10 top-1/2 -translate-y-1/2 z-10 hidden md:block">
+                    class="swiper-button-prev swiper-button-prev-uni absolute left-10 top-1/2 -translate-y-1/2 z-10 md:!flex !hidden">
                 </div>
                 <div
-                    class="swiper-button-next swiper-button-next-uni absolute right-10 top-1/2 -translate-y-1/2 z-10 hidden md:block">
+                    class="swiper-button-next swiper-button-next-uni absolute right-10 top-1/2 -translate-y-1/2 z-10 md:!flex !hidden">
                 </div>
 
                 <div class="swiper swiper-uni w-5/6">
@@ -384,10 +364,10 @@
         <div class="container mx-auto px-4">
             <div class="relative">
                 <div
-                    class="swiper-button-prev swiper-button-prev-planos absolute left-10 top-1/2 -translate-y-1/2 z-10 hidden md:block">
+                    class="swiper-button-prev swiper-button-prev-planos absolute left-10 top-1/2 -translate-y-1/2 z-10 md:!flex !hidden">
                 </div>
                 <div
-                    class="swiper-button-next swiper-button-next-planos absolute right-10 top-1/2 -translate-y-1/2 z-10 hidden md:block">
+                    class="swiper-button-next swiper-button-next-planos absolute right-10 top-1/2 -translate-y-1/2 z-10 md:!flex !hidden">
                 </div>
 
                 <div class="swiper swiper-planos w-5/6">

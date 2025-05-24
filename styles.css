@@ -82,6 +82,16 @@
     height: 100%;
 }
 
+.hidden-flecha
+{
+    display: none !important;
+}
+
+.show-flecha
+{
+    display: block !important;
+}
+
 @keyframes zoomInOut
 {
     0%

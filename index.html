@@ -558,12 +558,12 @@
         <div class="relative z-20 max-w-5xl mx-auto text-center text-white">
             <!-- Título dinámico -->
             <h2 x-text="lugarBloques[actual].titulo"
-                class="text-3xl md:text-4xl font-semibold mb-8 transition-opacity duration-500"
+                class="text-xl md:text-4xl font-semibold mb-8 transition-opacity duration-500"
                 :class="{ 'opacity-0': !fade }">
             </h2>
 
             <!-- Texto dinámico -->
-            <div class="text-justify text-lg leading-relaxed transition-opacity duration-500"
+            <div class="text-justify text-xs md:text-lg leading-relaxed transition-opacity duration-500"
                 x-html="lugarBloques[actual].html" :class="{ 'opacity-0': !fade }">
             </div>
         </div>

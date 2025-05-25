@@ -75,36 +75,92 @@
     </script>
 
 
-    <section id="hero" class="relative h-screen overflow-hidden" data-aos="fade" data-aos-duration="1000">
+    <section id="hero" class="relative h-screen overflow-hidden" data-aos="fade" data-aos-duration="1000"
+        x-data="heroComponent()" x-init="startLoop()">
 
-        <div x-data="{
-        images: [
-          'img/Media_VLA/Render_Exterior6.webp',
-          'img/Media_VLA/Render_Exterior2.jpg',
-          'img/Media_VLA/Render_Exterior5.jpg',
-          'img/Media_VLA/Render_Exterior1.JPG'
-        ],
-        current: 0,
-        startLoop() {
-          setInterval(() => {
-            this.current = (this.current + 1) % this.images.length;
-          }, 8000);
-        }
-      }" x-init="startLoop()" class="absolute top-0 left-0 w-full h-full z-0">
+        <!-- Fondo animado -->
+        <div class="absolute top-0 left-0 w-full h-full z-0">
             <template x-for="(img, index) in images" :key="index">
-                <img :src="img" :class="current === index ? 'opacity-100' : 'opacity-0'"
-                    class="fondo-zoom absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-2000" />
+                <img :src="img" :class="current === index ? 'opacity-100 scale-100' : 'opacity-0 scale-105'"
+                    class="fondo-zoom absolute top-0 left-0 w-full h-full object-cover transition-all duration-[2000ms] ease-in-out" />
             </template>
         </div>
 
         <div class="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-b from-transparent to-white z-10"></div>
 
-        <div id="hero-text" class="relative z-20 flex flex-col items-center justify-center h-full text-center px-4"
+        <!-- Texto -->
+        <div id="hero-text"
+            class="relative z-20 flex flex-col items-center justify-center h-full text-center px-4 text-black"
             data-aos="zoom-in-up" data-aos-duration="3000">
-            <h1 class="text-4xl md:text-9xl">Aura Andina</h1>
-            <p class="mt-4 text-lg md:text-3xl">Tu espacio en la Patagonia. Tu pausa en el Mundo.</p>
+
+            <!-- Título fijo -->
+            <h1 class="text-4xl md:text-9xl w-full whitespace-nowrap">
+                AURA ANDINA
+            </h1>
+
+            <!-- Subtítulo dinámico -->
+            <p class="mt-4 text-lg md:text-5xl min-h-[3rem]">
+                <span x-text="typedText" class=""></span>
+            </p>
         </div>
     </section>
+
+    <script>
+        function heroComponent() {
+            return {
+                images: [
+                    'img/Media_VLA/Render_Exterior6.webp',
+                    'img/Media_VLA/Render_Exterior2.jpg',
+                    'img/Media_VLA/Render_Exterior5.jpg',
+                    'img/Media_VLA/Render_Exterior1.JPG'
+                ],
+                subtitles: [
+                    "Tu espacio en la Patagonia. Tu pausa en el Mundo.",
+                    "Preventa de departamentos",
+                    "Excelente oportunidad de inversion",
+                ],
+                current: 0,
+                subtitleIndex: 0,   // Empieza en 1 para saltar el primero
+                typedText: "Tu espacio en la Patagonia. Tu pausa en el Mundo.", // primer texto ya escrito
+                isDeleting: false,
+                typingSpeed: 50,
+                pauseDelay: 3000,
+
+                startLoop() {
+                    // Cambio de fondo
+                    setInterval(() => {
+                        this.current = (this.current + 1) % this.images.length
+                    }, 8000)
+
+                    // Animación de subtítulo
+                    this.typeLoop()
+                },
+
+                typeLoop() {
+                    const currentSubtitle = this.subtitles[this.subtitleIndex]
+
+                    if (this.isDeleting) {
+                        this.typedText = currentSubtitle.substring(0, this.typedText.length - 1)
+                    } else {
+                        this.typedText = currentSubtitle.substring(0, this.typedText.length + 1)
+                    }
+
+                    let delay = this.typingSpeed
+
+                    if (!this.isDeleting && this.typedText === currentSubtitle) {
+                        delay = this.pauseDelay
+                        this.isDeleting = true
+                    } else if (this.isDeleting && this.typedText === '') {
+                        this.isDeleting = false
+                        this.subtitleIndex = (this.subtitleIndex + 1) % this.subtitles.length
+                        delay = 800
+                    }
+
+                    setTimeout(() => this.typeLoop(), delay)
+                }
+            }
+        }
+    </script>
 
     <section id="proyecto" class="p-6 bg-white overflow-x-hidden">
 

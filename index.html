@@ -992,12 +992,9 @@
                 async handleSubmit() {
                     Object.keys(this.form).forEach(field => this.validate(field));
                     if (!this.isValid) {
-                        console.log('Formulario inválido', this.errors);
                         this.showStatus('error', 'Por favor completá todos los campos correctamente.');
                         return;
                     }
-
-                    console.log('Formulario válido', this.form);
 
                     try {
                         const response = await fetch('https://formspree.io/f/mwpolvkj', {

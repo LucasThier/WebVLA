@@ -1160,6 +1160,11 @@
       min-height: 500px;
     }
   }
+  .md\:min-h-\[541px\] {
+    @media (width >= 48rem) {
+      min-height: 541px;
+    }
+  }
   .md\:w-1\/2 {
     @media (width >= 48rem) {
       width: calc(1/2 * 100%);

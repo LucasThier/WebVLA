@@ -12,6 +12,11 @@
     border-top: 2px solid #c09c6f;
 }
 
+.path-shadow
+{
+    filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.5));
+}
+
 #hero-text
 {
     color: white;
